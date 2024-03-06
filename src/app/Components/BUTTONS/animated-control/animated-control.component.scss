@@ -1,0 +1,55 @@
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  text-align: center;
+  color: #323232;
+}
+
+ .segmented-control {
+  background: #efeff0;
+  display: inline-flex;
+  display: flex !important;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0.5rem;
+  --width: 15rem;
+  height: 4rem;
+  font-size: 1.4rem;
+  padding: 0.6rem 0;
+
+}
+
+.segmented-control label {
+  transition: color 0.7s ease-in-out;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: var(--width);
+  color: rgba(0, 0, 0, 0.517);
+  z-index: 1;
+}
+
+.segmented-control-slide {
+  width: var(--width);
+  position: absolute;
+  left: 0;
+  // top: 0;
+  align-self: center;
+
+  height: 95%;
+  // outline-color: #efeff0;
+  // outline-offset: -0.4rem;
+  // outline-style: solid;
+  border-radius: inherit;
+  background-color: #ffffff;
+  transition: transform 0.4s ease-in-out;
+  border: 0.5px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.12), 0 3px 1px 0 rgba(0, 0, 0, 0.04);
+}
+
+.segmented-control label.checked {
+  color: black; /* Your desired color for checked labels */
+  font-weight: bolder;
+}

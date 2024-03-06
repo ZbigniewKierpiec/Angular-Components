@@ -1,0 +1,106 @@
+@import "@fortawesome/fontawesome-free/css/all.css";
+// Color
+
+$green: #4caf50;
+
+///////////////////
+.slider {
+  width: 40rem;
+  height: 80px;
+  position: relative;
+  background: white;
+  // border-radius: 40px;
+  border-radius: 0.7rem;
+  padding: 0 3rem;
+}
+.slider-value {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slider-value span {
+  position: absolute;
+  height: 45px;
+  width: 45px;
+  color: white;
+  font-size: large;
+  font-weight: 500;
+ top: -30px;
+  transform: translateX(-50%) scale(0);
+  transform-origin: bottom;
+  transition: transform 0.3s ease-in-out;
+  line-height: 55px;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slider-value span.show {
+  transform: translateX(-50%) scale(1);
+
+}
+.slider-value span::after {
+  position: absolute;
+  content: "";
+  height: 45px;
+  width: 45px;
+  left: 50%;
+
+  background-color: #4c9173;
+  transform: translateX(-50%) rotateZ(45deg);
+  line-height: 55px;
+  z-index: -1;
+  border-radius: 50% 50% 0 50%;
+  border: 3px solid white;
+}
+
+i {
+  font-size: 1.3rem;
+}
+.field {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.field input {
+  -webkit-appearance: none;
+  height: 10px;
+  width: 100%;
+
+  background: linear-gradient(
+    to right,
+    darkgreen 0%,
+    darkgreen 50%,
+    grey 50%,
+    grey 100%
+  );
+  border-radius: 5px;
+  outline: none;
+  border: none;
+}
+.field input::-webkit-slider-thumb {
+  transition: all 0.5s linear;
+  -webkit-appearance: none;
+  border: none;
+  height: 30px;
+  width: 30px;
+  border: 3px solid white;
+  background: green;
+
+  transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  &:hover {
+    box-shadow: 0 0 0 7px rgba($green, 0.26);
+  }
+
+  border-radius: 50%;
+
+  &:active {
+   
+    box-shadow: 0 0 0 12px rgba($green, 0.26);
+
+  }
+}

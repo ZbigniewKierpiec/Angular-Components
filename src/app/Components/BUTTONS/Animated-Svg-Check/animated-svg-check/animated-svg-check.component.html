@@ -1,0 +1,16 @@
+<div (click)="toggleAnimation()" class="box">
+  <div [ngClass]="{ active: active }" #squareElement class="square">
+    <svg viewBox="0 0 100 100">
+      <path
+        id="tick"
+        d="M 20 50 L 40 70 L 80 30"
+        fill="none"
+        stroke-width="5"
+        stroke="#fff"
+        class="path"
+      ></path>
+    </svg>
+  </div>
+
+  <p>weekends</p>
+</div>

@@ -1,0 +1,16 @@
+<h1>{{title}}</h1>
+
+<div class="segmented-control">
+  <label
+    *ngFor="let option of options; let i = index"
+    [class.checked]="i === selectedOption"
+    (click)="selectOption(i)"
+  >
+    {{ option }}
+  </label>
+  <div
+    #segmentedControl
+    class="segmented-control-slide"
+    [style.transform]="'translateX(' + slideTransform + 'px)'"
+  ></div>
+</div>

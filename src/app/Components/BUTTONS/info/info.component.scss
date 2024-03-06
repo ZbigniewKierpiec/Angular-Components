@@ -1,0 +1,105 @@
+$color: #232323;
+
+.btn{
+  display:inline-block;
+  font-size:1.2rem;
+  padding:1.2em 1.5em;
+  font-family:Gill Sans, "Gill Sans", sans-serif;
+  font-weight:700;
+  letter-spacing:-1px;
+  text-transform:uppercase;
+  text-decoration:none;
+  margin:3em;
+  border:solid 2px rgb(105, 112, 238);
+  color:$color;
+  border-radius:0.4em;
+  transition:all 0.3s linear;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+  animation-name: shaker;
+  &:hover{
+    color:#ffffff;
+    background:$color;
+    animation:none;
+  }
+}
+@keyframes shaker {
+  0% {
+    transform:rotate(0deg);
+  }
+
+  29% {
+    transform:rotate(0deg);
+  }
+
+
+  30% {
+    transform:rotate(1deg);
+  }
+
+  31% {
+    transform:rotate(2deg);
+  }
+
+  33% {
+    transform:rotate(1deg);
+  }
+
+  35% {
+    transform:rotate(0deg);
+  }
+
+  37% {
+    transform:rotate(-1deg);
+  }
+
+  39% {
+    transform:rotate(-2deg);
+  }
+
+  41% {
+    transform:rotate(-1deg);
+  }
+
+  43% {
+    transform:rotate(0deg);
+  }
+
+
+  45% {
+    transform:rotate(1deg);
+  }
+
+  47% {
+    transform:rotate(2deg);
+  }
+
+  49% {
+    transform:rotate(1deg);
+  }
+
+  51% {
+    transform:rotate(0deg);
+  }
+
+  53% {
+    transform:rotate(-1deg);
+  }
+
+  55% {
+    transform:rotate(-2deg);
+  }
+
+  57% {
+    transform:rotate(-1deg);
+  }
+
+  59% {
+    transform:rotate(0deg);
+  }
+
+
+  100%{
+    transform:rotate(0deg);
+  }
+}

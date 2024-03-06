@@ -1,0 +1,15 @@
+<section class="section">
+  <p>single</p>
+
+  <div class="box">
+    <ng-container *ngFor="let item of buttons">
+      <a
+        (click)="selectedOption = item.id"
+        id="button"
+        [ngClass]="{ isSelected: item.id === selectedOption }"
+        #buttonElement
+        >{{ item.name }}</a
+      >
+    </ng-container>
+  </div>
+</section>

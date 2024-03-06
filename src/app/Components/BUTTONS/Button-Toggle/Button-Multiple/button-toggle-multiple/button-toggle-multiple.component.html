@@ -1,0 +1,16 @@
+<section class="section">
+  <p>Multiple</p>
+
+  <div class="box">
+    <ng-container *ngFor="let item of buttons">
+      <a
+        id="button"
+        (click)="toggleSelection(item.id)"
+        [ngClass]="{ isSelected: selectedOptions.includes(item.id) }"
+        #buttonElement
+      >
+        {{ item.name }}
+      </a>
+    </ng-container>
+  </div>
+</section>

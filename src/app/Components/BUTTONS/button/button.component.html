@@ -1,0 +1,12 @@
+<!-- <button class="material-button" (click)="handleClick()">{{ label }}</button> -->
+<!-- <button [ngClass]="[ButtonType , 'material-button']" [class]="customClass" (click)="handleClick()">{{ label }}</button> -->
+<button
+  [ngClass]="[buttonType, customClass]"
+  class="material-button animatedBorder"
+  (click)="handleClick()"
+>
+{{label}}
+  <a class="btntext">{{ label }}</a>
+  <div class="animatedborder"></div>
+</button>
+

@@ -1,0 +1,15 @@
+.body {
+  width: 100%;
+
+  background-color: skyblue;
+  font-family: monospace;
+
+}
+.box{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
