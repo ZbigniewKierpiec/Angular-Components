@@ -1,0 +1,12 @@
+<div *ngFor="let section of sections; let i = index" class="accordion">
+  <div>
+    <div (click)="toggleSection(i)" class="accordion-section">
+      {{ section.title }}   <i    [class.active]="section.expanded"       class={{section.icon}}></i>
+
+    </div>
+    <div [@slideInOut]="isSectionExpanded(i) ? 'in' : 'out'" class="accordion-content">
+      {{ section.content }}
+    </div>
+  </div>
+</div>
+<!-- class="fa-solid fa-chevron-down -->

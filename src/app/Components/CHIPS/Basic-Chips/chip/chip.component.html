@@ -1,0 +1,12 @@
+<div
+
+
+  (click)="isActive()"
+  [classList]="active ? 'active box' : 'box'"
+  [attr.data-dynamic-text]="dynamicText"
+  class="box"
+>
+  <span [classList]="active ? 'active check' : 'check'" class="check">
+    <i class="fa-solid fa-check"></i>
+  </span>
+</div>

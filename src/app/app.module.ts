@@ -18,6 +18,9 @@ import { AnimatedSvgCheckComponent } from './Components/BUTTONS/Animated-Svg-Che
 import { CheckComponent } from './Components/BUTTONS/Animated-Svg-Check/Check/check/check.component';
 import { PathDirective } from './Components/BUTTONS/Animated-Svg-Check/path.directive';
 import { AnimatedSliderComponent } from './Components/Custom-Sliders/Animated-Slider/animated-slider/animated-slider.component';
+import { ChipComponent } from './Components/CHIPS/Basic-Chips/chip/chip.component';
+import { AcordionComponent } from './Components/Acordion/acordion/acordion.component';
+
 
 
 @NgModule({
@@ -38,6 +41,9 @@ import { AnimatedSliderComponent } from './Components/Custom-Sliders/Animated-Sl
     CheckComponent,
     PathDirective,
     AnimatedSliderComponent,
+    ChipComponent,
+    AcordionComponent,
+
 
   ],
   imports: [BrowserModule, FormsModule,  BrowserAnimationsModule, ],
