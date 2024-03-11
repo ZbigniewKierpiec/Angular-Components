@@ -1,10 +1,23 @@
 <div *ngFor="let section of sections; let i = index" class="accordion">
   <div>
-    <div (click)="toggleSection(i)" class="accordion-section">
-      {{ section.title }}   <i    [class.active]="section.expanded"       class={{section.icon}}></i>
-
+    <div
+      (click)="toggleSection(i); activeSection = i"
+      class="accordion-section"
+    >
+      {{ section.title }}
+      <i
+        [class]="
+          isSectionExpanded(i)
+            ? 'fa-solid fa-chevron-up active'
+            : 'fa-solid fa-chevron-down'
+        "
+        class="fa-solid fa-chevron-down"
+      ></i>
     </div>
-    <div [@slideInOut]="isSectionExpanded(i) ? 'in' : 'out'" class="accordion-content">
+    <div
+      [@slideInOut]="isSectionExpanded(i) ? 'in' : 'out'"
+      class="accordion-content"
+    >
       {{ section.content }}
     </div>
   </div>
