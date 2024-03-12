@@ -1,0 +1,40 @@
+<section class="box">
+  <div class="tabs" class="c-tabs">
+    <div class="tabs-nav">
+      <a
+
+        class="tabs-nav__link"
+        (click)="selectTab(0)"
+        [class.active]="selectedTab === 0"
+        >Home</a
+      >
+      <a
+
+        class="tabs-nav__link"
+        (click)="selectTab(1)"
+        [class.active]="selectedTab === 1"
+        >About us</a
+      >
+      <a
+
+        class="tabs-nav__link"
+        (click)="selectTab(2)"
+        [class.active]="selectedTab === 2"
+        >Contact</a
+      >
+      <div #marker  [ngStyle]="{  'width.px': markerWidth}"  class="tab-nav-marker"    ></div>
+    </div>
+
+    <div
+      *ngFor="let tab of tabs; let i = index"
+      class="c-tab"
+      [class.is-active]="selectedTab === i"
+    >
+      <div class="c-tab__content">
+        <h2>{{ tab.title }}</h2>
+        <p>{{ tab.content }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!--  -->

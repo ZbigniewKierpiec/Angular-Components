@@ -1,6 +1,17 @@
 .accordion {
-  width: 300px; /* Set your desired width */
+  width: 40rem; /* Set your desired width */
   background-color: #f1f1f1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 1.3rem;
+  padding: 1rem 0;
+}
+
+.body {
+  width: 95%;
+  height: 80%;
 }
 
 .accordion-section {
@@ -14,24 +25,39 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  i{
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.323);
+  &.active{
+    background-color: rgb(234, 225, 225);
+  }
+  &:hover{
+    background-color: rgb(234, 225, 225);
+  }
+  p {
+    font-size: 1.7rem;
+  }
+  i {
     color: rgb(106, 101, 101);
-    transition: all .3s linear;
-    &.active{
+    transition: all 0.3s linear;
+    font-size: 1.7rem;
+    &.active {
       transform: rotate(180deg);
     }
   }
 }
 
 .accordion-content {
-  // padding: 10px;
-  border-top: 1px solid #ddd;
   background-color: #f1f1f1;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
+
   font-weight: bolder;
   cursor: pointer;
+  p {
+    font-size: 1.7rem;
+  }
 }
-
+.custom-class {
+  border-top: 1px solid rgba(0, 0, 0, 0.323);
+}

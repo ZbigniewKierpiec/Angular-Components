@@ -1,0 +1,80 @@
+<div
+[classList]="
+name == 'Climate Control'
+  ? 'animate__animated animate__fadeIn box'
+  : 'box'
+"
+  class="box"
+>
+  <div class="box__cont">
+    <div class="box__cont__left">
+      <div (mousedown)="up()" class="box__cont__left__top">
+        <i   class="fa-solid fa-chevron-up"></i>
+      </div>
+      <div class="box__cont__left__middle">
+        <div class="box__cont__left__middle__item">
+          <img [ngStyle]="{'animation':red()}"   src="/assets/hot.png" alt="" />
+        </div>
+      </div>
+      <div (mousedown)="do()" class="box__cont__left__bottom">
+        <i class="fa-solid fa-chevron-down"></i>
+      </div>
+    </div>
+    <div class="box__cont__center">
+      <div class="box__cont__center__item">
+        <div class="box__cont__center__item__slider">
+          <div class="lab">
+            <div class="value">{{ gradi }}</div>
+            <div class="drop"></div>
+          </div>
+          <div class="thermostat">
+            <div class="bar">
+              <div class="inner_bar"></div>
+              <div class="hold left">
+                <div class="fill fill1"></div>
+              </div>
+              <div class="hold right">
+                <div   [style.animation]="fillAnimation"      class="fill fill2"></div>
+              </div>
+              <span>Heating</span>
+            </div>
+            <div           class="shadow">
+              <div class="shadow-cube"></div>
+            </div>
+            <div class="number">
+             
+            </div>
+            <div class="center">
+              <div (click)="minusMouseDown()" class="arrow minus">
+                <img src="/assets/right-arrow.png" alt="" />
+              </div>
+              <!-- <span class="arrow minus"><i class="material-icons">keyboard_arrow_left</i></span> -->
+              <div (click)="plusMouseDown()" class="arrow plus">
+                <img src="/assets/plusZee.PNG" alt="" />
+              </div>
+              <div class="small">
+                <span class="heat">{{ heatValue }}</span>
+                <span>&#x2103;</span>
+              </div>
+              <div class="slider">
+                <input class="input" id="switch" type="checkbox" />
+                <label class="label" for="switch"></label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="box__cont__right">
+      <div class="box__cont__right__top">
+        <div class="box__cont__right__top__item">
+          <img src="/assets/fire.png" alt="" />
+        </div>
+      </div>
+      <div class="box__cont__right__middle"></div>
+      <div class="box__cont__right__bottom">
+        <i class="fa-regular fa-snowflake"></i>
+      </div>
+    </div>
+  </div>
+</div>

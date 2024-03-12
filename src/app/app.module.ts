@@ -20,6 +20,9 @@ import { PathDirective } from './Components/BUTTONS/Animated-Svg-Check/path.dire
 import { AnimatedSliderComponent } from './Components/Custom-Sliders/Animated-Slider/animated-slider/animated-slider.component';
 import { ChipComponent } from './Components/CHIPS/Basic-Chips/chip/chip.component';
 import { AcordionComponent } from './Components/Acordion/acordion/acordion.component';
+import { TabsComponent } from './Components/Tabs/tabs/tabs.component';
+import { ThermostatComponent } from './Components/Thermostats/Thermostat/thermostat/thermostat.component';
+
 
 
 
@@ -43,6 +46,9 @@ import { AcordionComponent } from './Components/Acordion/acordion/acordion.compo
     AnimatedSliderComponent,
     ChipComponent,
     AcordionComponent,
+    TabsComponent,
+    ThermostatComponent,
+
 
 
   ],
