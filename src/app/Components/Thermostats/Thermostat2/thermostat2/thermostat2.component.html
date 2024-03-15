@@ -1,0 +1,30 @@
+<div class="cont">
+  <div class="box">
+    <div class="thermo">
+      <div class="bar">
+        <div class="inner"></div>
+        <div class="hold left">
+          <div class="fill fill1"></div>
+        </div>
+        <div      class="hold right">
+          <div    [style.animation]="fillAnimation"    class="fill fill2"></div>
+        </div>
+        <span>Heating</span>
+      </div>
+
+      <div class="mask">
+        <div  (click)="minusMouseDown()"         class="arrow minus">
+          <img src="assets/right-arrow.png" alt="" />
+        </div>
+
+        <div class="center">
+          <span class="heat">{{heatValue }}</span>
+          <span>&#x2103;</span>
+        </div>
+        <div  (click)="plusMouseDown()"      class="arrow plus">
+          <img src="assets/right-arrow.png" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

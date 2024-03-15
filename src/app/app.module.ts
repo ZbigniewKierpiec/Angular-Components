@@ -22,6 +22,8 @@ import { ChipComponent } from './Components/CHIPS/Basic-Chips/chip/chip.componen
 import { AcordionComponent } from './Components/Acordion/acordion/acordion.component';
 import { TabsComponent } from './Components/Tabs/tabs/tabs.component';
 import { ThermostatComponent } from './Components/Thermostats/Thermostat/thermostat/thermostat.component';
+import { Thermostat2Component } from './Components/Thermostats/Thermostat2/thermostat2/thermostat2.component';
+import { ThermoComponent } from './Components/Thermostats/Thermo3/thermo/thermo.component';
 
 
 
@@ -48,6 +50,8 @@ import { ThermostatComponent } from './Components/Thermostats/Thermostat/thermos
     AcordionComponent,
     TabsComponent,
     ThermostatComponent,
+    Thermostat2Component,
+    ThermoComponent,
 
 
 

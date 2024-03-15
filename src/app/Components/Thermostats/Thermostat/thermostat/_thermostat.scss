@@ -1,5 +1,4 @@
-@import "./Thermostat/variable";
-
+@import "./variable";
 
 .center_radius {
   top: 50%;
@@ -10,24 +9,15 @@
 
 .thermostat {
   position: absolute;
-  // @extend .center_radius;
-  // width: 400px;
-  width: 25rem;
-  width: 35rem;
-  width: 32rem;
-  // width: $hvac-width;
 
-  // height: 400px;
-  height: 25rem;
-  height: 35rem;
-  height: 32rem;
-  // height: $hvac-height;
+  width: $hvac-width !important;
+
+  height: $hvac-height !important;
 
   border-radius: 50%;
   background: #6d697f;
   background-color: black;
-  // box-shadow: inset 0px -6px 1px 2px rgba(0, 0, 0, 0.35),
-  //   0px 7px 40px 11px rgba(84, 81, 97, 0.4);
+
   &:hover {
     .number {
       opacity: 1;
@@ -58,17 +48,15 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) rotateZ(10deg);
-    // width: 40px;
+
     width: 2.5rem;
-    // width: $number-width;
+
     height: 82%;
     text-align: center;
     transition: 0.7s ease;
     opacity: 0;
 
     .ext {
-      // font-size: 16px;
-      // font-size: 1rem;
       font-size: $ext-font-size;
       color: white;
       font-weight: 1000;
@@ -78,48 +66,34 @@
   .bar {
     position: absolute;
     @extend .center_radius;
-    // width: 356px;
+
     width: 22.25rem;
     width: 32.25rem;
     width: 30rem;
 
-    // width: $bar-width;
-
-    // height: 356px;
     height: 22.25rem;
     height: 32.25rem;
     height: 30rem;
-
-    // height: $bar-height;
 
     .inner_bar {
       position: absolute;
       top: 50%;
       left: 50%;
-      // width: 344px;
+
       width: 21.5rem;
       width: 31.5rem;
       width: 28rem;
-      // width: $inner-bar-width;
-      // height: 344px;
+
       height: 21.5rem;
       height: 31.5rem;
       height: 28rem;
 
-      // height: $inner-bar-height;
-
-      // margin-left: -172px;
       margin-left: -10.75rem;
       margin-left: -15.75rem;
       margin-left: -14rem;
 
-      // margin-left:$inner-bar-margin-left;
-      // margin-top: -172px;
-      // margin-top: -10.75rem;
       margin-top: -10.75rem;
       margin-top: -14rem;
-
-      // margin-top: $inner-bar-margin-top;
 
       border-radius: 100%;
       background-color: #6d697f;
@@ -160,7 +134,7 @@
       height: 100%;
       clip: rect(0px, 356px, 356px, 178px);
       clip: rect(0px, 32.25rem, 32.25rem, 11.18rem);
-      // clip: $hold-clip;
+
       border-radius: 100%;
       background-color: #3a3749;
     }
@@ -172,8 +146,6 @@
       border-radius: 100%;
       clip: rect(0px, 178px, 356px, 0px);
       clip: rect(0px, 17.12rem, 32.25rem, 0px);
-
-      // clip: $fill-clip;
     }
 
     .fill1 {
@@ -210,23 +182,20 @@
       transform: rotate(20deg);
 
       transition: transform 0.6s;
-      //transition-delay: 1s;
     }
 
     span {
-      // width: 356px;
       width: 22.25rem;
       width: 32.25rem;
       width: 30rem;
-      // width: $span-width;
+
       font-weight: 800;
       position: absolute;
       bottom: 0px;
 
       text-align: center;
       text-transform: uppercase;
-      // font-size: 15px;
-      // font-size: .93rem;
+
       font-size: $span-font-size;
 
       color: #2e2c3a;
@@ -236,14 +205,11 @@
   }
   .center {
     position: absolute;
-    // width: 260px;
+
     width: 20.25rem;
 
-    // width: $center-width;
-    // height: 260px;
     height: 20.25rem;
 
-    // height: $center-height;
     @extend .center_radius;
     background: #e3e4ed;
     background-color: #373738;
@@ -251,9 +217,8 @@
     animation: bound-in 0.6s ease forwards;
 
     .minus {
-      // left: 7px;
       left: 1rem;
-      // left: $center-minus-left;
+
       top: 50%;
       transform: translateY(-50%);
       transition: left 0.3s ease-out;
@@ -271,9 +236,9 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      // right: 7px;
+
       right: 1.2rem;
-      // right: $center-plus-right;
+
       transition: right 0.3s ease-out;
       opacity: 1 !important;
       z-index: 33333333333;
@@ -287,13 +252,6 @@
     }
 
     span i {
-      // position: absolute;
-      // color: #b9b6c8;
-      // font-size: 40px;
-      // font-size: 2.5rem;
-      // font-weight: 500;
-      // line-height: 260px;
-      // line-height: 16.25rem;
     }
     .arrow {
       opacity: 0;
@@ -302,22 +260,17 @@
     }
     .minus {
       position: absolute;
-
-      // animation: arrow-left 1s forwards;
     }
     .plus {
       position: absolute;
-      // transform: rotate(180deg) translateY(50%);
-      // animation: arrow-right 1s forwards;
     }
     .small {
       position: absolute;
-      // width: 150px;
+
       width: 9.37rem;
-      // width: $small-width;
-      // height: 150px;
+
       height: 9.37rem;
-      // height: $small-height;
+
       background: #f8f9fa;
       background-color: rgb(95, 189, 95);
       background-color: #38bc7d;
@@ -331,17 +284,12 @@
       padding: $small-padding;
 
       span {
-        // font-size: 59px;
-        // font-size: 2rem;
         font-size: $small-span-font-size;
         color: white;
       }
       .heat {
-        // line-height: 150px;
         line-height: 9.37rem;
-        // line-height: $small-heat-line-height;
-        // font-size: 59px;
-        // font-size: 2rem;
+
         font-size: $small-heat-font-size;
         color: #57545f;
         color: white;
@@ -353,17 +301,13 @@
 }
 
 .slider {
-  // width: 100px;
-  // width: 6.25rem;
   width: $slider-width;
-  // height: 50px;
-  // height: 3rem;
+
   height: $slider-height;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  // bottom: 5px;
-  // bottom: .31rem;
+
   bottom: $slider-bottom;
   display: flex;
   justify-content: center;
