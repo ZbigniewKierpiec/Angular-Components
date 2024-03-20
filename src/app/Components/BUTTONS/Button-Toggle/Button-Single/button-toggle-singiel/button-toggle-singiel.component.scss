@@ -1,10 +1,11 @@
 .section {
   text-align: center;
-  width: 35rem;
+  width: 30rem;
   height: 70px;
+  display: flex;
+  flex-direction: column;
 
 
- 
 }
 .box{
   width: 100%;
@@ -17,7 +18,7 @@
 
 }
 p{
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   text-transform: capitalize;
 }
 
@@ -26,12 +27,12 @@ a {
   position: relative;
   display: inline-block;
   transition: all .4s linear;
-  padding: 0.5rem 3rem;
+  padding: 0.3rem 3rem;
 
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 1.3rem;
-  letter-spacing: 2px;
+  font-size: 1rem;
+  letter-spacing: 1px;
 
   background: #adacb3;
   overflow: hidden;

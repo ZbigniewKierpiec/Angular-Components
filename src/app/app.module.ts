@@ -24,6 +24,8 @@ import { TabsComponent } from './Components/Tabs/tabs/tabs.component';
 import { ThermostatComponent } from './Components/Thermostats/Thermostat/thermostat/thermostat.component';
 import { Thermostat2Component } from './Components/Thermostats/Thermostat2/thermostat2/thermostat2.component';
 import { ThermoComponent } from './Components/Thermostats/Thermo3/thermo/thermo.component';
+import { ThemeService } from './theme.service';
+
 
 
 
@@ -57,7 +59,7 @@ import { ThermoComponent } from './Components/Thermostats/Thermo3/thermo/thermo.
 
   ],
   imports: [BrowserModule, FormsModule,  BrowserAnimationsModule, ],
-  providers: [],
+  providers: [ThemeService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

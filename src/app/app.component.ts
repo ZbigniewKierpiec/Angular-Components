@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ThemeService } from './theme.service';
 enum ButtonType {
   MaterialButton = 'materialButton',
   AnimatedBorder = 'animatedBorder',
@@ -9,12 +10,20 @@ enum ButtonType {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'app';
-
+  darkMode = false;
   ButtonType = ButtonType;
 
-  handleClick(event: string) {
-    console.log(event);
+  constructor(private themeService: ThemeService) { }
+
+  ngOnInit() {
+    this.darkMode = this.themeService.isDarkMode();
   }
+
+  toggleTheme() {
+    this.themeService.toggleTheme();
+    this.darkMode = this.themeService.isDarkMode();
+  }
+
 }

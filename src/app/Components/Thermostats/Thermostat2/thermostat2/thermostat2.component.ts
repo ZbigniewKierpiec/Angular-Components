@@ -6,10 +6,6 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./thermostat2.component.scss'],
 })
 export class Thermostat2Component {
-
-
-
-
   constructor(private elementRef: ElementRef) {}
   name: string = '';
   temperature: number = 23.6;
@@ -22,6 +18,7 @@ export class Thermostat2Component {
   transformValue: string = '';
   fillAnimation: string = '';
   shadowAnimation: string = '';
+  checked: boolean = false;
 
   up() {
     this.ti -= 0.5;
@@ -105,10 +102,8 @@ export class Thermostat2Component {
     this.updateGr();
   }
 
-
-
-
-
-
-
+  check() {
+    this.checked !== this.checked; // Toggle the value of checked
+    console.log('Checked:', this.checked);
+  }
 }

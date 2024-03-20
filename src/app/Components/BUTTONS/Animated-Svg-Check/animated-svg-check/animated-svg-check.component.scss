@@ -1,5 +1,5 @@
 .box {
-  width: 30rem;
+  width: 20rem;
   border-top-left-radius: 4rem;
   border-bottom-left-radius: 4rem;
   border-top-right-radius: 4rem;
@@ -8,8 +8,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.3rem 2rem;
-  font-size: 2rem;
+  padding: .7rem 2rem;
+  font-size: 1.8rem;
   text-transform: capitalize;
   cursor: pointer;
 
@@ -19,8 +19,8 @@
   }
 }
 .square {
-  width: 2rem;
-  height: 2rem;
+  width: 1.7rem;
+  height: 1.7rem;
   border: 1px solid rgba(130, 126, 126, 0.709);
   display: flex;
   justify-content: center;

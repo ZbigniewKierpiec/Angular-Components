@@ -1,34 +1,45 @@
-<div class="body">
-  <div class="box">
-    <app-button
-      [buttonType]="ButtonType.MaterialButton"
-      customClass="round-corners"
-      label="add more"
-    ></app-button>
-    <app-animated-button-border label="add more"></app-animated-button-border>
-    <app-animated-border label="next"></app-animated-border>
-    <app-icon-buttons
-      label="settings"
-      klasa="fa-solid fa-gear"
-    ></app-icon-buttons>
-    <app-info label="new message"></app-info>
-    <app-ripple-btn></app-ripple-btn>
-    <app-animated-control
-      title="Aspect ratio"
-      [options]="['16:9', '4:3', '1:1']"
-    ></app-animated-control>
-    <app-loading-btn></app-loading-btn>
-    <app-button-toggle-singiel></app-button-toggle-singiel>
-    <app-button-toggle-multiple></app-button-toggle-multiple>
-    <app-animated-svg-check></app-animated-svg-check>
-    <app-animated-slider></app-animated-slider>
-    <app-chip text="monday"></app-chip>
-    <app-acordion></app-acordion>
-    <app-tabs></app-tabs>
-    <app-thermostat></app-thermostat>
-    <app-thermostat2></app-thermostat2>
+<body>
+  <div class="body">
+    <div class="box">
+      <app-button
+        [buttonType]="ButtonType.MaterialButton"
+        customClass="round-corners"
+        label="add more"
+      ></app-button>
+      <app-animated-button-border label="add more"></app-animated-button-border>
+      <app-animated-border label="next"></app-animated-border>
+      <app-icon-buttons
+        label="settings"
+        klasa="fa-solid fa-gear"
+      ></app-icon-buttons>
+      <app-info label="new message"></app-info>
+      <app-ripple-btn></app-ripple-btn>
+      <app-animated-control
+        title="Aspect ratio"
+        [options]="['16:9', '4:3', '1:1']"
+      ></app-animated-control>
+      <app-loading-btn></app-loading-btn>
+      <app-button-toggle-singiel></app-button-toggle-singiel>
+      <app-button-toggle-multiple></app-button-toggle-multiple>
+      <app-animated-svg-check></app-animated-svg-check>
+      <app-animated-slider></app-animated-slider>
+      <app-chip text="monday"></app-chip>
+      <app-acordion></app-acordion>
+      <app-tabs></app-tabs>
 
+      <app-thermostat2></app-thermostat2>
+      <app-thermo></app-thermo>
 
-
+      <button
+        class="dark"
+        [ngStyle]="{
+          'background-color': darkMode ? 'whitesmoke' : 'black',
+          color: darkMode ? 'black' : 'white'
+        }"
+        (click)="toggleTheme()"
+      >
+        {{ darkMode ? "light mode" : "dark Mode" }}
+      </button>
+    </div>
   </div>
-</div>
+</body>
