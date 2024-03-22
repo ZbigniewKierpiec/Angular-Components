@@ -1,20 +1,32 @@
 @import "@fortawesome/fontawesome-free/css/all.css";
-
+@mixin flexbox(
+  $display: flex,
+  $direction: row,
+  $justify: flex-start,
+  $align: stretch
+) {
+  display: $display;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
 .btn {
-  background-color: lightgreen;
+  --background-color: lightgreen;
+
   border: 0px solid #150485;
   border-radius: 35px;
   font-size: 1rem;
   font-weight: bold;
   color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+  @include flexbox(flex, row, center, center);
   cursor: pointer;
   outline: none;
   transition: all 0.25s ease;
-  width: 10rem;
+
+
   position: relative;
+  width:10rem;
   height: 60px;
   overflow: hidden;
 }
@@ -30,9 +42,8 @@
   border-radius: 50%;
   top: 0;
   left: 0px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+  @include flexbox(flex, row, center, center);
   pointer-events: none;
   opacity: 0;
   transition: all 0.25s ease;
@@ -79,9 +90,8 @@
   background: inherit;
   width: 60px;
   height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+  @include flexbox(flex, row, center, center);
   border-radius: 50%;
   transition: all 0.45s linear;
   visibility: hidden;

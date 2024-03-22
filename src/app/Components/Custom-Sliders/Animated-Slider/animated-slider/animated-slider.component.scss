@@ -1,15 +1,11 @@
 @import "@fortawesome/fontawesome-free/css/all.css";
-// Color
-
-$green: #4caf50;
-
-///////////////////
+$shadow-color: #4caf50;
 .slider {
   width: 30rem;
   height: 70px;
   position: relative;
   background: white;
-  // border-radius: 40px;
+
   border-radius: 0.7rem;
   padding: 0 3rem;
 }
@@ -27,7 +23,7 @@ $green: #4caf50;
   color: white;
   font-size: large;
   font-weight: 500;
- top: -30px;
+  top: -30px;
   transform: translateX(-50%) scale(0);
   transform-origin: bottom;
   transition: transform 0.3s ease-in-out;
@@ -39,7 +35,6 @@ $green: #4caf50;
 }
 .slider-value span.show {
   transform: translateX(-50%) scale(1);
-
 }
 .slider-value span::after {
   position: absolute;
@@ -90,17 +85,15 @@ i {
   width: 30px;
   border: 3px solid white;
   background: green;
-
+  cursor: pointer;
   transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   &:hover {
-    box-shadow: 0 0 0 7px rgba($green, 0.26);
+    box-shadow: 0 0 0 7px rgba($shadow-color, 0.26);
   }
 
   border-radius: 50%;
 
   &:active {
-
-    box-shadow: 0 0 0 12px rgba($green, 0.26);
-
+    box-shadow: 0 0 0 12px rgba($shadow-color, 0.26);
   }
 }

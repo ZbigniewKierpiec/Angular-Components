@@ -1,37 +1,41 @@
+@mixin flexbox(
+  $display: flex,
+  $direction: row,
+  $justify: flex-start,
+  $align: stretch
+) {
+  display: $display;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
 .section {
   text-align: center;
   width: 30rem;
   height: 70px;
-  display: flex;
-  flex-direction: column;
-
-
+  @include flexbox(flex, column, center, center);
 }
-.box{
+.box {
   width: 100%;
+  @include flexbox(flex, row, center, center);
 
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
   grid-gap: 1rem;
-
 }
-p{
+p {
   font-size: 1.3rem;
   text-transform: capitalize;
 }
 
-
 a {
   position: relative;
   display: inline-block;
-  transition: all .4s linear;
+  transition: all 0.4s linear;
   padding: 0.3rem 3rem;
 
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 1rem;
+  font-size: 0.9rem;
   letter-spacing: 1px;
 
   background: #adacb3;

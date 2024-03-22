@@ -1,3 +1,17 @@
+@mixin flexbox(
+  $display: flex,
+  $direction: row,
+  $justify: flex-start,
+  $align: stretch
+) {
+  display: $display;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+
+
 h1 {
   text-align: center;
   font-size: 1.3rem;
@@ -6,9 +20,11 @@ h1 {
 }
 
  .segmented-control {
-  background: #efeff0;
-  display: inline-flex;
-  display: flex !important;
+  --segmentet-control-background:#efeff0;
+  --segmented-control-label-color:rgba(0, 0, 0, 0.517);
+  background:var(--segmentet-control-background);
+
+  @include flexbox(flex);
   overflow: hidden;
   position: relative;
   border-radius: 0.5rem;
@@ -17,17 +33,18 @@ h1 {
   font-size: 1.4rem;
   padding: 0.6rem 0;
 
+
 }
 
 .segmented-control label {
   transition: color 0.7s ease-in-out;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+  @include flexbox(flex, row, center, center);
   cursor: pointer;
   width: var(--width);
-  color: rgba(0, 0, 0, 0.517);
+
+  color:var(--segmented-control-label-color);
   z-index: 1;
 }
 
@@ -35,13 +52,11 @@ h1 {
   width: var(--width);
   position: absolute;
   left: 0;
-  // top: 0;
+
   align-self: center;
 
   height: 95%;
-  // outline-color: #efeff0;
-  // outline-offset: -0.4rem;
-  // outline-style: solid;
+
   border-radius: inherit;
   background-color: #ffffff;
   transition: transform 0.4s ease-in-out;
@@ -50,6 +65,6 @@ h1 {
 }
 
 .segmented-control label.checked {
-  color: black; /* Your desired color for checked labels */
+  color: black;
   font-weight: bolder;
 }
