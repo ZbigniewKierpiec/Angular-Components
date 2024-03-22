@@ -1,0 +1,170 @@
+<div class="box">
+  <!-- Steper Container -->
+  <div class="steper-container">
+    <!-- Steper -->
+    <div class="steper">
+      <!-- Circle Box -->
+      <div class="circle-box">
+        <!-- Progress Bar -->
+        <div [style.width]="progressWidth" class="progress"></div>
+
+        <!-- First Circle -->
+        <div
+          [class.active]="currentActive === 1 || currentActive === 2 || currentActive == 3"
+          [ngClass]="{ active: currentActive === 2 || currentActive === 3 }"
+          (click)="setCurrentActive(1)"
+          class="circle first"
+          #squareElement
+        >
+          <svg viewBox="0 0 100 100">
+            <path
+              id="tick"
+              d="M 20 50 L 40 70 L 80 30"
+              fill="none"
+              stroke-width="5"
+              stroke="#fff"
+              class="path"
+            ></path>
+          </svg>
+          <div class="circle-text">
+            <span [ngClass]="{ active: currentActive === 1 || currentActive === 2 || currentActive === 3 }">
+              account basic details
+            </span>
+          </div>
+        </div>
+
+        <!-- Middle Circle -->
+        <div
+          [class.active]="currentActive === 3"
+          [ngClass]="{ active2: currentActive === 1 }"
+          (click)="setCurrentActive(2)"
+          class="circle middle"
+        >
+          <svg viewBox="0 0 100 100">
+            <path
+              id="tick"
+              d="M 20 50 L 40 70 L 80 30"
+              fill="none"
+              stroke-width="5"
+              stroke="#fff"
+              class="path"
+            ></path>
+          </svg>
+          <div class="circle-text">
+            <span [ngClass]="{ active: currentActive === 2 || currentActive === 3 }">social profiles</span>
+          </div>
+        </div>
+
+        <!-- Last Circle -->
+        <div
+          #parentElement
+          class="circle"
+          [ngClass]="{ active2: currentActive === 1 || currentActive === 2 }"
+          (click)="setCurrentActive(3)"
+          class="circle last"
+        >
+          <svg viewBox="0 0 100 100">
+            <path
+              id="tick"
+              d="M 20 50 L 40 70 L 80 30"
+              fill="none"
+              stroke-width="5"
+              stroke="#fff"
+              class="path"
+            ></path>
+          </svg>
+          <div class="circle-text">
+            <span [class.active]="currentActive == 3">Personal Details</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div [class.active]="currentActive === 1" class="main">
+        <div class="content">
+          <!-- Account Basic Details -->
+          <div [class.active]="currentActive === 1" class="info">
+            <p>account basic details</p>
+            <div class="input">
+              <label for="base">step1</label>
+              <input
+                (input)="submitForm()"
+                [(ngModel)]="inputValue"
+                name="inputField"
+                #inputField="ngModel"
+                placeholder="..."
+                id="base"
+                type="text"
+              />
+            </div>
+            <div class="buttons">
+              <button [disabled]="currentActive === 1" (click)="prevStep()" class="btn">prev</button>
+              <button
+                (click)="nextStep()"
+                [classList]="inputValue == '' ? 'empty btn' : 'dirty btn'"
+                class="btn"
+              >
+                {{ currentActive == 3 ? "save" : "next" }}
+              </button>
+            </div>
+          </div>
+
+          <!-- Social Profiles -->
+          <div [class.active]="currentActive === 2" class="info">
+            <p>social profiles</p>
+            <div class="input">
+              <label for="base">step2</label>
+              <input
+                (onchange)="submitForm()"
+                [(ngModel)]="inputValue"
+                name="inputField"
+                #inputField="ngModel"
+                placeholder="..."
+                id="base"
+                type="text"
+              />
+            </div>
+            <div class="buttons">
+              <button [disabled]="currentActive === 1" (click)="prevStep()" class="btn">prev</button>
+              <button
+                (click)="nextStep()"
+                [classList]="inputValue == '' ? 'empty btn' : 'dirty btn'"
+                class="btn"
+              >
+                {{ currentActive == 3 ? "save" : "next" }}
+              </button>
+            </div>
+          </div>
+
+          <!-- Personal Details -->
+          <div [class.active]="currentActive === 3" class="info">
+            <p>personal details</p>
+            <div class="input">
+              <label for="base">step3</label>
+              <input
+                (onchange)="submitForm()"
+                [(ngModel)]="inputValue"
+                name="inputField"
+                #inputField="ngModel"
+                placeholder="..."
+                id="base"
+                type="text"
+              />
+            </div>
+            <div class="buttons">
+              <button [disabled]="currentActive === 1" (click)="prevStep()" class="btn">prev</button>
+              <button
+                [classList]="inputValue == '' ? 'empty btn' : 'dirty btn active'"
+                [class.active]="currentActive == 3"
+                (click)="saveForm()"
+                class="btn"
+              >
+                save
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
