@@ -29,6 +29,7 @@
   width:10rem;
   height: 60px;
   overflow: hidden;
+  background-color: var(--background-color);
 }
 .btn:not(.loading):hover {
   box-shadow: 0px 2px 15px 0px #2575fc;
@@ -57,6 +58,7 @@
   border-left: 3px solid #fff;
   animation: loading infinite 0.8s ease 0.05s;
   position: absolute;
+
 }
 .loading-animate:before {
   content: "";
@@ -68,16 +70,19 @@
   animation: loading infinite 0.8s linear;
   position: absolute;
   opacity: 0.6;
+
 }
 .btn.loading {
   width: 60px;
 }
 
 .btn.loading .loading-animate {
+
   opacity: 1;
 }
 
 .btnActive {
+
   width: 60px;
 }
 
@@ -101,6 +106,7 @@
 .iconActive {
   transform: scale(1);
   visibility: visible !important;
+ 
 }
 
 @keyframes loading {

@@ -26,6 +26,7 @@ import { Thermostat2Component } from './Components/Thermostats/Thermostat2/therm
 import { ThermoComponent } from './Components/Thermostats/Thermo3/thermo/thermo.component';
 import { ThemeService } from './theme.service';
 import { SteperComponent } from './Components/Steper/steper/steper.component';
+import { ToastComponent } from './Components/Toast/toast/toast.component';
 
 
 
@@ -56,6 +57,7 @@ import { SteperComponent } from './Components/Steper/steper/steper.component';
     Thermostat2Component,
     ThermoComponent,
     SteperComponent,
+    ToastComponent,
 
 
 

@@ -1,0 +1,16 @@
+<div class="toast" [ngClass]="{ active: isActive }">
+  <div class="toast-content">
+    <i class="fas fa-solid fa-check check"></i>
+
+    <div class="message">
+      <span class="text text-1">Success</span>
+      <span class="text text-2">Your changes have been saved</span>
+    </div>
+  </div>
+
+  <i class="fa-solid fa-xmark close" (click)="closeToast()"></i>
+
+  <div class="progress" [ngClass]="{ active: progressActive }"></div>
+</div>
+
+<button (click)="showToast()">Show Toast</button>
