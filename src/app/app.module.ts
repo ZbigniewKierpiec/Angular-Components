@@ -27,6 +27,11 @@ import { ThermoComponent } from './Components/Thermostats/Thermo3/thermo/thermo.
 import { ThemeService } from './theme.service';
 import { SteperComponent } from './Components/Steper/steper/steper.component';
 import { ToastComponent } from './Components/Toast/toast/toast.component';
+import { SpinnerComponent } from './Components/Spinners/spinner/spinner.component';
+import { Spinner2Component } from './Components/Spinners/spinner2/spinner2.component';
+import { Spinner3Component } from './Components/Spinners/spinner3/spinner3.component';
+import { SideNavComponent } from './Components/Side-Nav/side-nav/side-nav.component';
+import { TestComponent } from './Components/test/test/test.component';
 
 
 
@@ -58,6 +63,11 @@ import { ToastComponent } from './Components/Toast/toast/toast.component';
     ThermoComponent,
     SteperComponent,
     ToastComponent,
+    SpinnerComponent,
+    Spinner2Component,
+    Spinner3Component,
+    SideNavComponent,
+    TestComponent,
 
 
 

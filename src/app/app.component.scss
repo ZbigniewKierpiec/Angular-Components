@@ -1,15 +1,12 @@
-
 $light-background: #ffffff;
 $light-text: #000000;
 
 $dark-background: #333333;
 $dark-text: #ffffff;
 
-
 .box {
-
   width: 100%;
-  min-height: 400vh;
+  min-height: 500vh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -18,16 +15,23 @@ $dark-text: #ffffff;
 
   // background-color: skyblue;
 }
+.test {
+  width: 50rem;
+  height: 10rem;
+  border: 1px solid rgba(0, 0, 0, 0.136);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 
-
-.dark{
+.dark {
   position: fixed;
-  top:50%;
-  transition: all .4s linear;
- left: 80%;
- transform: translateX(-50%);
+  top: 50%;
+  transition: all 0.4s linear;
+  left: 80%;
+  transform: translateX(-50%);
   z-index: 88888888888888888888888 !important;
-  padding: .4rem 1rem;
+  padding: 0.4rem 1rem;
   border: none;
   outline: none;
   background-color: #000000;
@@ -35,6 +39,6 @@ $dark-text: #ffffff;
   font-family: monospace;
   text-transform: uppercase;
   font-size: 1.4rem;
-  border-radius: .2rem;
+  border-radius: 0.2rem;
   cursor: pointer;
 }
