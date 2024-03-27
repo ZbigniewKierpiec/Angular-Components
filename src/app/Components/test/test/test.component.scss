@@ -7,7 +7,7 @@
 .side-nav,
 .nav-menu {
   min-height: 30%;
-
+overflow: hidden !important;
 
 }
 .side-nav{
@@ -43,6 +43,7 @@ left: 0;
   position: relative;
   transition:all .3s linear;
   &.active{
+    transition:all .3s linear 1s;
      width: 100px;
   }
 }
@@ -101,11 +102,12 @@ align-items: center;
   transition: all .3s linear .3s;
   font-weight:400;
  text-align: right;
-
-
+ opacity: 1;
+ transition: all .3s linear .5s;
 
   &.active{
     transition: all .3s linear;
+    transform: translateX(150px);
     visibility: hidden;
     opacity: 0;
   }
