@@ -13,6 +13,7 @@ export class TestComponent implements OnInit {
     { menuItem: 'About', icon: 'fa-solid fa-tv' },
     { menuItem: 'Services', icon: 'fa-brands fa-flipboard' },
     { menuItem: 'Contact', icon: 'fa-regular fa-lightbulb' },
+   
   ];
 
   constructor(private el: ElementRef, private renderer: Renderer2) {}

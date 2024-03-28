@@ -19,22 +19,22 @@ import {
   styleUrls: ['./side-nav.component.scss'],
 })
 export class SideNavComponent implements OnInit {
-  @ViewChild('slider', { static: true }) slider?: ElementRef;
 
-  // menuItems: string[] = ['Home', 'About', 'Services', 'Contact'];
-  // icons:string[]=['fa-solid fa-house' ,'fa-solid fa-tv','fa-brands fa-flipboard','fa-regular fa-lightbulb','']
+  @ViewChild('slider', { static: true }) slider?: ElementRef;
 
   menuItemsWithIcons: { menuItem: string; icon: string }[] = [
     { menuItem: 'Home', icon: 'fa-solid fa-house' },
     { menuItem: 'About', icon: 'fa-solid fa-tv' },
     { menuItem: 'Services', icon: 'fa-brands fa-flipboard' },
     { menuItem: 'Contact', icon: 'fa-regular fa-lightbulb' },
+
   ];
 
   constructor(private el: ElementRef, private renderer: Renderer2) {}
 
   active: number | undefined;
   name: string = '';
+  activeBurger:boolean=false;
 
   onClick(event: MouseEvent, index: number) {
     // Calculate offset top of clicked list item
@@ -46,6 +46,15 @@ export class SideNavComponent implements OnInit {
     console.log(offsetTop);
     this.active = index;
   }
+
+  burgerToggle(){
+    this.activeBurger =! this.activeBurger;
+    console.log(this.activeBurger)
+  }
+
+
+
+
 
   ngOnInit(): void {}
 }
