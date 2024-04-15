@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ThemeService } from './theme.service';
+import { SideNavComponent } from './Components/Side-Nav/side-nav/side-nav.component';
 enum ButtonType {
   MaterialButton = 'materialButton',
   AnimatedBorder = 'animatedBorder',
 }
 
 @Component({
+
+
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],

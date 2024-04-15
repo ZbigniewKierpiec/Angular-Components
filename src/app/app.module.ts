@@ -32,10 +32,7 @@ import { Spinner2Component } from './Components/Spinners/spinner2/spinner2.compo
 import { Spinner3Component } from './Components/Spinners/spinner3/spinner3.component';
 import { SideNavComponent } from './Components/Side-Nav/side-nav/side-nav.component';
 import { TestComponent } from './Components/test/test/test.component';
-
-
-
-
+import { BurgerDirective } from './Components/shared/burger.directive';
 
 @NgModule({
   declarations: [
@@ -66,13 +63,11 @@ import { TestComponent } from './Components/test/test/test.component';
     SpinnerComponent,
     Spinner2Component,
     Spinner3Component,
-    SideNavComponent,
     TestComponent,
-
-
-
+    SideNavComponent,
+    BurgerDirective,
   ],
-  imports: [BrowserModule, FormsModule,  BrowserAnimationsModule, ],
+  imports: [BrowserModule, FormsModule, BrowserAnimationsModule],
   providers: [ThemeService],
   bootstrap: [AppComponent],
 })

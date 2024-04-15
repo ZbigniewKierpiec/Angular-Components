@@ -12,14 +12,16 @@ import {
   Renderer2,
   ViewChild,
 } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
 
 @Component({
+ 
   selector: 'app-side-nav',
   templateUrl: './side-nav.component.html',
   styleUrls: ['./side-nav.component.scss'],
 })
 export class SideNavComponent implements OnInit {
-
   @ViewChild('slider', { static: true }) slider?: ElementRef;
 
   menuItemsWithIcons: { menuItem: string; icon: string }[] = [
@@ -27,14 +29,13 @@ export class SideNavComponent implements OnInit {
     { menuItem: 'About', icon: 'fa-solid fa-tv' },
     { menuItem: 'Services', icon: 'fa-brands fa-flipboard' },
     { menuItem: 'Contact', icon: 'fa-regular fa-lightbulb' },
-
   ];
 
   constructor(private el: ElementRef, private renderer: Renderer2) {}
 
   active: number | undefined;
   name: string = '';
-  activeBurger:boolean=false;
+  activeBurger: boolean = false;
 
   onClick(event: MouseEvent, index: number) {
     // Calculate offset top of clicked list item
@@ -47,14 +48,10 @@ export class SideNavComponent implements OnInit {
     this.active = index;
   }
 
-  burgerToggle(){
-    this.activeBurger =! this.activeBurger;
-    console.log(this.activeBurger)
+  burgerToggle() {
+    this.activeBurger = !this.activeBurger;
+    console.log(this.activeBurger);
   }
-
-
-
-
 
   ngOnInit(): void {}
 }

@@ -25,10 +25,12 @@ export class RippleBtnComponent implements AfterViewInit {
       const y = event.clientY - button.offsetTop;
 
       const ripples = this.renderer.createElement('span');
+
       this.renderer.setStyle(ripples, 'left', x + 'px');
       this.renderer.setStyle(ripples, 'top', y + 'px');
+     
       this.renderer.appendChild(button, ripples);
-
+      console.log('dziala');
       setTimeout(() => {
         this.renderer.removeChild(button, ripples);
       }, 1000);
