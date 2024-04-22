@@ -1,0 +1,26 @@
+
+<div   [attr.data-content]="dynamicContent"   [class.active]="chipsList.length   != 0"    class="container">
+  <div [class.active]="placeholder" class="title">
+    <ng-container *ngFor="let item of chipsList; let i = index">
+      <button [@fadeInOut] class="btn">
+        <span>{{ item }}</span>
+        <span (click)="removeChip(i)" class="icon">
+          <i class="fa-solid fa-xmark"></i>
+        </span>
+      </button>
+    </ng-container>
+
+    <input
+      type="text"
+      required="required"
+      id="first"
+      [value]="item"
+      [placeholder]="placeholder"
+      [(ngModel)]="item"
+      (focus)="onInputFocus()"
+      (blur)="onInputBlur()"
+      (keydown.enter)="newChip($event)"
+    />
+    <label [class.active]="chipsList.length != 0" for="first">TV Inputs</label>
+  </div>
+</div>

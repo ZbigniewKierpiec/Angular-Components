@@ -2,18 +2,20 @@
   <div class="slider-value"   [class.show]="isSliderFocused">
     <span #slideValue>{{ sliderValue }}</span>
   </div>
-  <div class="field">
+<div class="field">
 
-    <input
+  <input
 
-      type="range"
-      min="0"
-      max="100"
-      #inputSlide
-      [(ngModel)]="sliderValue"
-      (ngModelChange)="updateSliderValue()"
-      (blur)="onSliderBlur()"
-    />
+  type="range"
+  min="0"
+  max="100"
+  #inputSlide
+  [(ngModel)]="sliderValue"
+  (ngModelChange)="updateSliderValue()"
+  (blur)="onSliderBlur()"
+/>
 
-  </div>
+</div>
+
+
 </div>

@@ -1,0 +1,148 @@
+/* Styles for the dot menu */
+
+.dot-menu {
+    /* Define custom variable for ripple effect color */
+  --riple: rgba(135, 129, 129, 0.135);
+  position: relative !important;
+  max-height: 14rem;
+}
+/* Styles for the icon inside the dot menu */
+
+.icon {
+  position: absolute !important;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  top: -2.8rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  padding: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  /* Styles for icon hover and focus states */
+
+  &:hover,
+  &:focus {
+    opacity: 0.9;
+  }
+  /* Ripple effect */
+  ::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: var(--riple);
+    border-radius: 50%;
+    transition: transform 0.4s, opacity 0.9s;
+    transform: translate(-50%, -50%) scale(0);
+    pointer-events: none;
+  }
+
+/* Ripple effect animation on click */
+
+  &.ripple {
+    &:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background-color: currentColor;
+      visibility: hidden;
+      z-index: 2;
+    }
+
+    &:not(:active):before {
+      animation: ripple 0.7s cubic-bezier(0, 0, 0.2, 1);
+      transition: all 0.7s step-end;
+    }
+
+    &:active:before {
+      visibility: visible;
+    }
+  }
+
+ /* Background color change on hover */
+
+  &:hover {
+    background-color: var(--riple);
+  }
+
+ /* Disable hover effect when active */
+
+  &.activeHover {
+    cursor: default;
+    &:hover {
+      background-color: transparent;
+    }
+  }
+  i {
+    color: black;
+    font-size: 1.4rem;
+  }
+}
+
+/* Styles for the list inside the dot menu */
+
+ul {
+  list-style: none;
+  overflow-y: auto;
+  height: 14rem;
+  transition: all 0.3s linear;
+  padding: 1rem 0;
+
+  -webkit-box-shadow: 0px 3px 24px -8px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 0px 3px 24px -8px rgba(0, 0, 0, 1);
+  box-shadow: 0px 3px 24px -8px rgba(0, 0, 0, 1);
+}
+
+/* Styles for list items */
+
+li {
+  width: 14rem;
+  padding: 0.2rem;
+  transition: all 0.2s linear;
+  color: black;
+  padding-left: 1.3rem;
+  text-transform: capitalize;
+  cursor: pointer;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+
+    /* Background color change on hover */
+
+  &:hover {
+    background-color: rgba(149, 160, 160, 0.158);
+  }
+
+   /* Background color when active */
+
+  &.active {
+    background-color: #dde2e7;
+  }
+}
+
+
+// Ripple animation
+@keyframes ripple {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0.5;
+  }
+
+  100% {
+    width:3rem;
+    height:3rem;
+    opacity: 0;
+  }
+}

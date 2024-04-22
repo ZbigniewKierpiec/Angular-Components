@@ -15,7 +15,7 @@ import { LoadingBtnComponent } from './Components/BUTTONS/loading-btn/loading-bt
 import { ButtonToggleSingielComponent } from './Components/BUTTONS/Button-Toggle/Button-Single/button-toggle-singiel/button-toggle-singiel.component';
 import { ButtonToggleMultipleComponent } from './Components/BUTTONS/Button-Toggle/Button-Multiple/button-toggle-multiple/button-toggle-multiple.component';
 import { AnimatedSvgCheckComponent } from './Components/BUTTONS/Animated-Svg-Check/animated-svg-check/animated-svg-check.component';
-import { CheckComponent } from './Components/BUTTONS/Animated-Svg-Check/Check/check/check.component';
+
 import { PathDirective } from './Components/BUTTONS/Animated-Svg-Check/path.directive';
 import { AnimatedSliderComponent } from './Components/Custom-Sliders/Animated-Slider/animated-slider/animated-slider.component';
 import { ChipComponent } from './Components/CHIPS/Basic-Chips/chip/chip.component';
@@ -31,44 +31,55 @@ import { SpinnerComponent } from './Components/Spinners/spinner/spinner.componen
 import { Spinner2Component } from './Components/Spinners/spinner2/spinner2.component';
 import { Spinner3Component } from './Components/Spinners/spinner3/spinner3.component';
 import { SideNavComponent } from './Components/Side-Nav/side-nav/side-nav.component';
-import { TestComponent } from './Components/test/test/test.component';
+
 import { BurgerDirective } from './Components/shared/burger.directive';
+import { TestComponent } from './Components/test/test.component';
+import { HeatingThermostatComponent } from "./Components/heating-thermostat/heating-thermostat.component";
+import { DismissibleChipComponent } from './Components/CHIPS/dismissible-chip/dismissible-chip.component';
+import { ChipwithinputComponent } from './Components/CHIPS/chipwithinput/chipwithinput.component';
+import { MenuComponent } from './Components/Skeleton/menu/menu.component';
+
+
+
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ButtonComponent,
-    AnimatedButtonBorderComponent,
-    InfoComponent,
-    IconButtonsComponent,
-    AnimatedBorderComponent,
-    RippleBtnComponent,
-    SegmentedButtonsComponent,
-    AnimatedControlComponent,
-    LoadingBtnComponent,
-    ButtonToggleSingielComponent,
-    ButtonToggleMultipleComponent,
-    AnimatedSvgCheckComponent,
-    CheckComponent,
-    PathDirective,
-    AnimatedSliderComponent,
-    ChipComponent,
-    AcordionComponent,
-    TabsComponent,
-    ThermostatComponent,
-    Thermostat2Component,
-    ThermoComponent,
-    SteperComponent,
-    ToastComponent,
-    SpinnerComponent,
-    Spinner2Component,
-    Spinner3Component,
-    TestComponent,
-    SideNavComponent,
-    BurgerDirective,
-  ],
-  imports: [BrowserModule, FormsModule, BrowserAnimationsModule],
-  providers: [ThemeService],
-  bootstrap: [AppComponent],
+    declarations: [
+        AppComponent,
+        ButtonComponent,
+        AnimatedButtonBorderComponent,
+        InfoComponent,
+        IconButtonsComponent,
+        AnimatedBorderComponent,
+        RippleBtnComponent,
+        SegmentedButtonsComponent,
+        AnimatedControlComponent,
+        LoadingBtnComponent,
+        ButtonToggleSingielComponent,
+        ButtonToggleMultipleComponent,
+        AnimatedSvgCheckComponent,
+        PathDirective,
+        AnimatedSliderComponent,
+        ChipComponent,
+        AcordionComponent,
+        TabsComponent,
+        ThermostatComponent,
+        Thermostat2Component,
+        ThermoComponent,
+        SteperComponent,
+        ToastComponent,
+        SpinnerComponent,
+        Spinner2Component,
+        Spinner3Component,
+        SideNavComponent,
+        BurgerDirective,
+        TestComponent,
+        DismissibleChipComponent,
+        ChipwithinputComponent,
+        MenuComponent,
+    
+    ],
+    providers: [ThemeService],
+    bootstrap: [AppComponent],
+    imports: [BrowserModule, FormsModule, BrowserAnimationsModule, HeatingThermostatComponent]
 })
 export class AppModule {}

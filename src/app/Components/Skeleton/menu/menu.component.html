@@ -1,0 +1,16 @@
+<div class="dot-menu">
+  <!-- Dot menu icon -->
+  <span (click)="visable()" [class.activeHover]="active" class="icon ripple">
+    <i class="fa-solid fa-ellipsis-vertical"></i>
+  </span>
+  <!-- Dropdown menu -->
+  <ul class="ul" [@fadeInOut]="active ? 'active' : 'void'">
+    <!-- Iterate through items -->
+    <ng-container *ngFor="let item of items; let i = index">
+      <!-- Menu item -->
+      <li (click)="activeLink(i)" [class.active]="index === i">
+        {{ item.name }}
+      </li>
+    </ng-container>
+  </ul>
+</div>

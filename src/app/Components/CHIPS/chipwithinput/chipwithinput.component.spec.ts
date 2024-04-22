@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CheckComponent } from './check.component';
+import { ChipwithinputComponent } from './chipwithinput.component';
 
-describe('CheckComponent', () => {
-  let component: CheckComponent;
-  let fixture: ComponentFixture<CheckComponent>;
+describe('ChipwithinputComponent', () => {
+  let component: ChipwithinputComponent;
+  let fixture: ComponentFixture<ChipwithinputComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CheckComponent ]
+      declarations: [ ChipwithinputComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CheckComponent);
+    fixture = TestBed.createComponent(ChipwithinputComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

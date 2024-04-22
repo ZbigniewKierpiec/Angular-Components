@@ -1,0 +1,84 @@
+<!--
+<div class="cont">
+  <div class="box">
+    <div class="thermo">
+
+      <div         class="lab">
+        <div [ngStyle]= "{ 'color': checked ? 'white' : 'rgba(0, 0, 0, 0.344)' }"       class="value">{{ gradi }}</div>
+        <div  [ngStyle]= "{ 'background-color': checked ? '#38BC7D' : '#808080' }"         class="drop"></div>
+      </div>
+
+      <div  [class.disabled]="checked"    class="bar">
+        <div class="inner"></div>
+        <div class="hold left">
+          <div class="fill fill1"></div>
+        </div>
+        <div      class="hold right">
+          <div    [style.animation]="fillAnimation"    class="fill fill2"></div>
+        </div>
+        <span>Heating</span>
+      </div>
+
+      <div class="mask">
+        <div  (click)="minusMouseDown()"   [class.disabled]="checked"      class="arrow minus">
+          <img src="assets/right-arrow.png" alt="" />
+        </div>
+
+        <div   [ngStyle]="{ 'background-color': checked ? '#38BC7D': '#808080', 'color': checked ? 'white' : ''    }"     class="center">
+          <span   class="heat">{{heatValue }} </span>
+
+          <span> &#x2103;</span>
+
+
+
+        </div>
+
+        <div class="slider">
+          <input [(ngModel)]="checked" (change)="check()" class="input" id="swi" type="checkbox" />
+          <label class="label" for="swi"></label>
+        </div>
+
+        <div  (click)="plusMouseDown()"    [class.disabled]="checked"    class="arrow plus">
+          <img src="assets/right-arrow.png" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ -->
+ <div class="cont">
+  <div class="box">
+    <div class="thermo">
+      <div class="lab">
+        <div [style.color]="checked ? 'white' : 'rgba(0, 0, 0, 0.344)'" class="value">{{ gradi }}</div>
+        <div [style.background-color]="checked ? '#38BC7D' : '#808080'" class="drop"></div>
+      </div>
+      <div [class.disabled]="checked" class="bar">
+        <div class="inner"></div>
+        <div class="hold left">
+          <div #fill1 class="fill fill1"></div>
+        </div>
+        <div class="hold right">
+          <div #fill2 class="fill fill2"></div>
+        </div>
+        <span>Heating</span>
+      </div>
+      <div class="mask">
+        <div (click)="minusMouseDown()" [class.disabled]="checked" class="arrow minus">
+          <img src="assets/right-arrow.png" alt="" />
+        </div>
+        <div [style.background-color]="checked ? '#38BC7D': '#808080'" [style.color]="checked ? 'white' : ''" class="center">
+          <span class="heat">{{ heatValue }} </span>
+          <span>&#x2103;</span>
+        </div>
+        <div class="slider">
+          <input [(ngModel)]="checked" (change)="check()" class="input" id="swi" type="checkbox" />
+          <label class="label" for="swi"></label>
+        </div>
+        <div (click)="plusMouseDown()" [class.disabled]="checked" class="arrow plus">
+          <img src="assets/right-arrow.png" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
