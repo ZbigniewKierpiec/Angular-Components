@@ -1,0 +1,7 @@
+<div class="box">
+  <button class="btn" (click)="addNotification()">click</button>
+
+  <div [@fadeInOut] *ngFor="let item of notifications" class="notification">
+    {{ item.content }}
+  </div>
+</div>

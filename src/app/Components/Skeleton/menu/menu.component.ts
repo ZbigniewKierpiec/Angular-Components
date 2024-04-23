@@ -13,7 +13,7 @@ import {
   Renderer2,
   ViewChild,
 } from '@angular/core';
- // Define an Interface
+// Define an Interface
 interface TVChannel {
   name: string;
 }
@@ -57,21 +57,18 @@ export class MenuComponent {
     { name: 'mtv' },
   ];
 
-// Initialize variables
+  // Initialize variables
 
   index!: number;
   active: boolean = false;
 
-
-
-// Method to toggle menu visibility
+  // Method to toggle menu visibility
 
   visable() {
     this.active = !this.active;
-
   }
 
-// Method to handle click on a channel link
+  // Method to handle click on a channel link
 
   activeLink(i: any) {
     this.index = i;

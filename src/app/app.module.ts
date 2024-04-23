@@ -38,6 +38,9 @@ import { HeatingThermostatComponent } from "./Components/heating-thermostat/heat
 import { DismissibleChipComponent } from './Components/CHIPS/dismissible-chip/dismissible-chip.component';
 import { ChipwithinputComponent } from './Components/CHIPS/chipwithinput/chipwithinput.component';
 import { MenuComponent } from './Components/Skeleton/menu/menu.component';
+import { DividerComponent } from './Components/divider/divider.component';
+import { NotificationComponent } from './Components/Notyification/notification/notification.component';
+import { NotificationItemComponent } from './Components/Notyification/notification-item/notification-item.component';
 
 
 
@@ -76,6 +79,9 @@ import { MenuComponent } from './Components/Skeleton/menu/menu.component';
         DismissibleChipComponent,
         ChipwithinputComponent,
         MenuComponent,
+        DividerComponent,
+        NotificationComponent,
+        NotificationItemComponent,
     
     ],
     providers: [ThemeService],
