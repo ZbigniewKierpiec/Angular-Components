@@ -34,58 +34,73 @@ import { SideNavComponent } from './Components/Side-Nav/side-nav/side-nav.compon
 
 import { BurgerDirective } from './Components/shared/burger.directive';
 import { TestComponent } from './Components/test/test.component';
-import { HeatingThermostatComponent } from "./Components/heating-thermostat/heating-thermostat.component";
+import { HeatingThermostatComponent } from './Components/heating-thermostat/heating-thermostat.component';
 import { DismissibleChipComponent } from './Components/CHIPS/dismissible-chip/dismissible-chip.component';
 import { ChipwithinputComponent } from './Components/CHIPS/chipwithinput/chipwithinput.component';
 import { MenuComponent } from './Components/Skeleton/menu/menu.component';
 import { DividerComponent } from './Components/divider/divider.component';
 import { NotificationComponent } from './Components/Notyification/notification/notification.component';
 import { NotificationItemComponent } from './Components/Notyification/notification-item/notification-item.component';
-
-
+import { DrawerComponent } from './Components/Drawer/drawer/drawer.component';
+import { RippleDirective } from './Components/ripple.directive';
+import { ImageAvatarsComponent } from './Components/image-avatars/image-avatars.component';
+import { TextAvatarComponent } from './Components/image-avatars/text-avatar/text-avatar.component';
+import { IconAvatarComponent } from './Components/image-avatars/icon-avatar/icon-avatar.component';
+import { BackdropComponent } from './Components/Backdrop/backdrop/backdrop.component';
 
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        ButtonComponent,
-        AnimatedButtonBorderComponent,
-        InfoComponent,
-        IconButtonsComponent,
-        AnimatedBorderComponent,
-        RippleBtnComponent,
-        SegmentedButtonsComponent,
-        AnimatedControlComponent,
-        LoadingBtnComponent,
-        ButtonToggleSingielComponent,
-        ButtonToggleMultipleComponent,
-        AnimatedSvgCheckComponent,
-        PathDirective,
-        AnimatedSliderComponent,
-        ChipComponent,
-        AcordionComponent,
-        TabsComponent,
-        ThermostatComponent,
-        Thermostat2Component,
-        ThermoComponent,
-        SteperComponent,
-        ToastComponent,
-        SpinnerComponent,
-        Spinner2Component,
-        Spinner3Component,
-        SideNavComponent,
-        BurgerDirective,
-        TestComponent,
-        DismissibleChipComponent,
-        ChipwithinputComponent,
-        MenuComponent,
-        DividerComponent,
-        NotificationComponent,
-        NotificationItemComponent,
-    
-    ],
-    providers: [ThemeService],
-    bootstrap: [AppComponent],
-    imports: [BrowserModule, FormsModule, BrowserAnimationsModule, HeatingThermostatComponent]
+  declarations: [
+    AppComponent,
+    ButtonComponent,
+    AnimatedButtonBorderComponent,
+    InfoComponent,
+    IconButtonsComponent,
+    AnimatedBorderComponent,
+    RippleBtnComponent,
+    SegmentedButtonsComponent,
+    AnimatedControlComponent,
+    LoadingBtnComponent,
+    ButtonToggleSingielComponent,
+    ButtonToggleMultipleComponent,
+    AnimatedSvgCheckComponent,
+    PathDirective,
+    AnimatedSliderComponent,
+    ChipComponent,
+    AcordionComponent,
+    TabsComponent,
+    ThermostatComponent,
+    Thermostat2Component,
+    ThermoComponent,
+    SteperComponent,
+    ToastComponent,
+    SpinnerComponent,
+    Spinner2Component,
+    Spinner3Component,
+    SideNavComponent,
+    BurgerDirective,
+    TestComponent,
+    DismissibleChipComponent,
+    ChipwithinputComponent,
+    MenuComponent,
+    DividerComponent,
+    NotificationComponent,
+    NotificationItemComponent,
+    DrawerComponent,
+    RippleDirective,
+    ImageAvatarsComponent,
+    TextAvatarComponent,
+    IconAvatarComponent,
+    BackdropComponent,
+  
+  ],
+  providers: [ThemeService],
+  bootstrap: [AppComponent],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    HeatingThermostatComponent,
+  ],
 })
 export class AppModule {}

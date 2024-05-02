@@ -1,0 +1,21 @@
+
+<div class="box">
+   <!-- Box user section -->
+  <div class="box__user">
+     <!-- User image section -->
+    <div class="box__user__image">
+        <!-- Avatar image -->
+      <div class="box__user__image__avatar">
+         <!-- Display user avatar -->
+        <img [src]="image" />
+      </div>
+       <!-- User availability indicator -->
+      <span [class.active]="active" class="box__user__image__availability"></span>
+    </div>
+      <!-- User title section -->
+    <div class="box__user__title">
+        <!-- User name display -->
+      <p  class="box__user__title__name">{{ name }}</p>
+    </div>
+  </div>
+</div>

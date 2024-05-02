@@ -7,12 +7,13 @@
 @import "/src/sass/base/typography";
 @import "/src/sass/base/utilities";
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  -webkit-tap-highlight-color: transparent;}
-  $light-background: #ffffff;
+  -webkit-tap-highlight-color: transparent;
+}
+$light-background: #ffffff;
 $light-text: #000000;
 
 $dark-background: #333333;
@@ -21,12 +22,29 @@ $dark-text: #ffffff;
 body {
   width: 100%;
   min-height: 100vh;
-
-
 }
 
 .dark-mode {
   background-color: $dark-background;
   color: $dark-text;
+}
+.ripple {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(135, 130, 130, 0.4);
 
+  transform: scale(0);
+  animation: ripple-effect 0.5s linear;
+}
+
+@keyframes ripple-effect {
+  to {
+    transform: scale(2);
+    opacity: 0;
+  }
 }

@@ -9,6 +9,7 @@
 
 }
 button {
+  position: relative;
   padding: 0.4rem 1rem;
   text-transform: uppercase;
   border: none;
@@ -17,12 +18,7 @@ button {
   cursor: pointer;
 
 }
-.btn{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+
 .notification {
   position: relative;
   transition:transform .4s linear;

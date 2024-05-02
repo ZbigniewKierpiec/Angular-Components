@@ -1,0 +1,154 @@
+.dial {
+  position:absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  &__btn {
+    padding: 1.2rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    background-color: #cccccc;
+    border-radius: 50%;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    border: none;
+    outline: none;
+
+    // transition: background 0.2s, opacity 0.2s, transform 0.2s;
+  }
+  &__options {
+    position: absolute;
+    bottom: 100%;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.dial__btn:active {
+  background-color: #aaaaaa;
+
+}
+.dial__btn--primary {
+  background-color: rgb(4, 124, 4);
+  margin-bottom: 0;
+  width: 3.5rem;
+  height: 3.5rem;
+  font-size: 1.3rem;
+  // transition: all 0.2s linear;
+  box-shadow: none;
+  color: #ffffff;
+  &.active {
+    // transition: transform 0.2s linear;
+    transform: rotate(30deg);
+  }
+}
+.dial__btn--primary:active {
+  background-color: rgb(36, 243, 36);
+}
+
+.dial__btn:not(.dial__btn--primary) {
+  position: relative;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(40px) , scale(0);
+  background-color: rgb(224, 215, 215);
+  background-color: red;
+  // transition:transform , opacity , scale 0.3s both ease-in-out  ;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, scale 0.1s ease-in-out;
+
+   div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgb(224, 215, 215);
+    z-index: -3;
+    padding: 1.6rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-size: 1.1rem;
+    i{
+   line-height: normal;
+    }
+   }
+  &:hover::before{
+    visibility: visible;
+
+    opacity: 1;
+  }
+  &::before{
+
+    content: attr(data-content);
+    position: absolute;
+    top: 50%;
+    left: -155%;
+    transform: translateY(-50%);
+    width: 2.7rem;
+    height: 1.2rem;
+    background-color:#CCCCCC;
+    border-radius: .2rem;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    padding: 2.5px 3.2px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .3s linear;
+
+
+  }
+  &:nth-child(1) {
+    transition-delay: 0.2s;
+
+  //  &::before{
+  //   content: 'send';
+
+
+  //  }
+  }
+  &:nth-child(2) {
+    transition-delay: 0.3s;
+    // &::before{
+    //   content: 'photo';
+    //  }
+  }
+
+  &:nth-child(3) {
+    transition-delay: 0.4s;
+    // &::before{
+    //   content: 'power';
+    //  }
+  }
+
+}
+
+.dial--active .dial__btn {
+  opacity: 1;
+  transform: translateY(0)  scale(1);
+  visibility: visible;
+  pointer-events: all;
+  // transition: opacity 0.2s ease-in-out;
+
+  &:nth-child(1) {
+    transition-delay: 0.4s;
+  }
+  &:nth-child(2) {
+    transition-delay: 0.3s;
+  }
+
+  &:nth-child(3) {
+    transition-delay: 0.2s;
+  }
+}
