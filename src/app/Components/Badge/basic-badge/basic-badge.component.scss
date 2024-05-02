@@ -1,0 +1,51 @@
+.badge {
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  background-color: gray;
+  color: var(--color);
+  border-radius: 10% 10% 10% 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.3rem;
+  transition: all 4s linear;
+  .info {
+    font-size: inherit;
+    color: inherit;
+    font-family: monospace;
+    pointer-events: none;
+    opacity: 0;
+    transition: all 4s linear !important;
+    &.active {
+      transition: all 4s linear !important;
+
+      opacity: 1;
+    }
+  }
+  &::before {
+    content: attr(data-content);
+    width: var(--width);
+    height: var(--width);
+    background-color: var(--backgroundActive);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -25%;
+    right: -25%;
+    line-height: var(--width);
+    text-align: center;
+   
+    text-align: center;
+    box-shadow: 0 0 0px var(--boxShadow) #fff;
+    border-radius: 50%;
+    font-size: inherit;
+    color: inherit;
+    &.active {
+      background-color: green;
+    }
+    // font-size: 0.7rem;
+
+  }
+}

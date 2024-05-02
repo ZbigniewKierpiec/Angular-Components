@@ -1,0 +1,7 @@
+<div [style.width.rem]="size"  [style.height.rem]="size" [style.background]="background"   [style.font-size.rem]="fontSize"     [ngStyle]="{ '--width': widthVariable + 'rem' ,'--boxShadow': boxShadow + 'rem' , '--backgroundActive':validateNumber()==0?'red':'green' , '--color':color }"       [attr.data-content]="validateNumber()"      class="badge">
+
+
+   <span [classList]=" validateNumber() == 0 ?'active info ':'info'" class="info"  >0 - 99</span>
+
+
+</div>

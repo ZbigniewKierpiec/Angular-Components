@@ -47,6 +47,8 @@ import { ImageAvatarsComponent } from './Components/image-avatars/image-avatars.
 import { TextAvatarComponent } from './Components/image-avatars/text-avatar/text-avatar.component';
 import { IconAvatarComponent } from './Components/image-avatars/icon-avatar/icon-avatar.component';
 import { BackdropComponent } from './Components/Backdrop/backdrop/backdrop.component';
+import { BasicBadgeComponent } from './Components/Badge/basic-badge/basic-badge.component';
+
 
 
 @NgModule({
@@ -92,7 +94,9 @@ import { BackdropComponent } from './Components/Backdrop/backdrop/backdrop.compo
     TextAvatarComponent,
     IconAvatarComponent,
     BackdropComponent,
-  
+    BasicBadgeComponent,
+
+
   ],
   providers: [ThemeService],
   bootstrap: [AppComponent],
