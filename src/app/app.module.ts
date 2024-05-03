@@ -48,6 +48,7 @@ import { TextAvatarComponent } from './Components/image-avatars/text-avatar/text
 import { IconAvatarComponent } from './Components/image-avatars/icon-avatar/icon-avatar.component';
 import { BackdropComponent } from './Components/Backdrop/backdrop/backdrop.component';
 import { BasicBadgeComponent } from './Components/Badge/basic-badge/basic-badge.component';
+import { OverflowBadgeComponent } from './Components/Badge/overflow-badge/overflow-badge.component';
 
 
 
@@ -95,6 +96,7 @@ import { BasicBadgeComponent } from './Components/Badge/basic-badge/basic-badge.
     IconAvatarComponent,
     BackdropComponent,
     BasicBadgeComponent,
+    OverflowBadgeComponent,
 
 
   ],
