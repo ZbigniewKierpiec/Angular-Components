@@ -1,0 +1,64 @@
+@mixin circle($size) {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  left: calc(50% - #{$size/2});
+  top: calc(50% - #{$size/2});
+  width: $size;
+  height: $size;
+}
+
+$size: 200px;
+.progress-pie {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  background-color: #e5e5e5;
+  position: relative;
+  &.circle {
+    background-color: #81ce97;
+    background-color: lime
+  }
+}
+.progress {
+
+  @include circle($size);
+  clip: rect(0, $size, $size, #{$size/2});
+  .progress-fill {
+    transition: all .3s linear;
+    @include circle($size);
+    clip: rect(0, #{$size/2}, $size, 0);
+    background: lime;
+    transform: rotate(60deg);
+  }
+  .circle & {
+    clip: rect(0, #{$size/2}, $size, 0);
+    .progress-fill {
+      clip: rect(0, $size, $size, #{$size/2});
+      background: #e5e5e5;
+    }
+  }
+}
+.percents {
+  @include circle(#{$size/1.15});
+  background: #fff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all .3s linear;
+  span {
+    display: block;
+    font-size: 2.6em;
+    font-weight: bold;
+  }
+}
+
+button {
+  position: relative;
+  padding: 0.3rem 1rem;
+  text-transform: capitalize;
+  font-family: monospace;
+  cursor: pointer;
+  z-index: 9999999999999999999999999999999999999999999999999999999 !important;
+}

@@ -11,120 +11,94 @@
 //   border-radius: 50%;
 // }
 
-
-.main{
-  position: relative;
-  width: 3rem;
-  height: 3rem;
-  background-color: gray;
-  color: var(--color);
-  border-radius: 10% 10% 10% 10%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.3rem;
-  transition: all 4s linear;
-}
-
-.badge {
-  position: absolute;
-  top: -25%;
-  right: -25%;
-  display: inline-block;
-  // padding: 5px 10px;
-  background-color: #007bff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-width: 25px;
-  height: 25px;
-  color: white;
-  border-radius:50%;
-  box-shadow: 0 0 0px var(--boxShadow) #fff;
-  text-align: center;
-  letter-spacing: .1rem;
-  white-space: nowrap; /* Prevent content from wrapping */
-  overflow: hidden; /* Hide overflowing content */
-  text-overflow: ellipsis; /* Display ellipsis if content overflows */
-  transition: width 0.3s ease; /* Adding transition effect */
-  max-width: 200px; /* Optional: Set a maximum width to prevent badge from growing too wide */
-}
-
-
-
-
-
-// .circle {
-//   border-radius: 50vh !important; /* Apply border radius to make it a circle */
+// .main{
+//   position: relative;
+//   width: 3rem;
+//   height: 3rem;
+//   background-color: gray;
+//   color: var(--color);
+//   border-radius: 10% 10% 10% 10%;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   padding: 0.3rem;
+//   transition: all 4s linear;
 // }
-
-
-
-
-
-
-
-
-
-
-
-.badge {
-  /* Positioning*/
+.main {
   position: relative;
-  width: 3rem;
-  height: 3rem;
+  width: var(--size);
+  height: var(--size);
   background-color: gray;
-  color: var(--color);
+
   border-radius: 10% 10% 10% 10%;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0.3rem;
   transition: all 4s linear;
-   /* Styling for the span with class 'info' */
-  .info {
-    font-size: inherit;
-    color: inherit;
-    font-family: monospace;
-    pointer-events: none;
-    opacity: 0;
-    transition: all 4s linear !important;
-     /* When the 'active' class is present */
-    &.active {
-      transition: all 4s linear !important;
-
-      opacity: 1;
-    }
-  }
-
-/* Pseudo-element for the circular indicator */
-
   &::before {
     content: attr(data-content);
+    // min-width: 2.5rem;
     width: var(--width);
-    height: var(--width);
-    background-color: var(--backgroundActive);
+    width: var(--widthSmole);
+    // min-height: 2.5rem;
+    // height: 2.5rem;
+    // height: var(--widthSmole);
+    padding: var(--padding);
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    top: -25%;
-    right: -25%;
-    line-height: var(--width);
+    top: -15%;
+    right: -1%;
+    background-color: green;
     text-align: center;
-
+    display: inline-block;
     text-align: center;
+    box-shadow: 0 0 0px 4px #fff;
+    border-radius: var(--border-radius);
+    font-size:var(--fontSize);
+    line-height: 2.5rem;
+    line-height: var(--widthSmole);
+    transform: translateX(50%);
+    // transform-origin: center center !important;
+    // margin: 0 auto;
+    color: white;
     box-shadow: 0 0 0px var(--boxShadow) #fff;
-    border-radius: 50%;
-    font-size: inherit;
-    color: inherit;
-     /* When the 'active' class is present */
-    &.active {
-      background-color: green;
-    }
-    // font-size: 0.7rem;
+    letter-spacing: 0.1rem;
+    white-space: nowrap; /* Prevent content from wrapping */
+    overflow: hidden; /* Hide overflowing content */
+    text-overflow: ellipsis; /* Display ellipsis if content overflows */
+    transition: width 0.3s ease; /* Adding transition effect */
   }
 }
 
+// .badge {
+//   position: absolute;
+//   top:-22.50px;
+//   right:-3.5rem;
 
+//   // display: inline-block;
+//   // padding: 5px 10px;
+//   background-color: #007bff;
+//   display: flex;
+//   justify-content:center;
+//   align-items: center;
+//   min-width: 45px;
+//   height: 45px;
 
+//   color: white;
+//   border-radius: 50%;
+
+//   text-align: center;
+//   letter-spacing: 0.1rem;
+//   white-space: nowrap; /* Prevent content from wrapping */
+//   overflow: hidden; /* Hide overflowing content */
+//   text-overflow: ellipsis; /* Display ellipsis if content overflows */
+//   transition: width 0.3s ease; /* Adding transition effect */
+//   // max-width: 200px; /* Optional: Set a maximum width to prevent badge from growing too wide */
+// }
+
+.circle {
+  border-radius: 50vh !important; /* Apply border radius to make it a circle */
+}

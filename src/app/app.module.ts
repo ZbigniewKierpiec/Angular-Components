@@ -49,8 +49,9 @@ import { IconAvatarComponent } from './Components/image-avatars/icon-avatar/icon
 import { BackdropComponent } from './Components/Backdrop/backdrop/backdrop.component';
 import { BasicBadgeComponent } from './Components/Badge/basic-badge/basic-badge.component';
 import { OverflowBadgeComponent } from './Components/Badge/overflow-badge/overflow-badge.component';
-
-
+import { ProgressBarComponent } from './Components/ProgressBar/progress-bar/progress-bar.component';
+import { CircularProgressComponent } from './Components/ProgressBar/circular-progress/circular-progress.component';
+import { SvgProgressBarComponent } from './Components/ProgressBar/svg-progress-bar/svg-progress-bar.component';
 
 @NgModule({
   declarations: [
@@ -97,8 +98,9 @@ import { OverflowBadgeComponent } from './Components/Badge/overflow-badge/overfl
     BackdropComponent,
     BasicBadgeComponent,
     OverflowBadgeComponent,
-
-
+    ProgressBarComponent,
+    CircularProgressComponent,
+    SvgProgressBarComponent,
   ],
   providers: [ThemeService],
   bootstrap: [AppComponent],

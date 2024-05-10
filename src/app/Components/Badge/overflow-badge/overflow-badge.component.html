@@ -1,25 +1,18 @@
 <div
-  [style.width.rem]="size"
-  [style.height.rem]="size"
-  [style.background]="background"
-  [style.font-size.rem]="fontSize"
+
   [ngStyle]="{
-    '--width': widthVariable + 'rem',
+    '--width': badgeWidth + 'rem',
+    '--size': size + 'rem',
+    '--padding': isCircle ? '' : '0px 10px',
+    '--border-radius': isCircle ? '50%' : '50vh',
     '--boxShadow': boxShadow + 'rem',
-    '--backgroundActive': validateNumber() == 0 ? 'red' : 'green',
-    '--color': color
+    '--widthSmole': widthVariable + 'rem',
+    '--fontSize':fontSize + 'rem'
   }"
-  [attr.data-content]="validateNumber()"
-  class="badge"
->
-  <!-- Conditionally apply 'active' class based on 'validateNumber()' result -->
-  <span
-    [classList]="validateNumber() == 0 ? 'active info ' : 'info'"
-    class="info"
-    >0 - 99</span
-  >
-</div>
-
-
-
-<div class="infoCircle"   [ngStyle]="{ 'border-radius': isCircle ? '50%' : '50vh', 'padding': isCircle ? '' : '5px 10px' }"     >{{ content }}</div>
+  [attr.data-content]="content"
+  class="main"
+></div>
+<!-- <div class="badge"
+[ngStyle]="{ 'border-radius': isCircle ? '50%' : '50vh' , 'padding': isCircle ? '' : '5px 10px'  }"     >{{ content }}</div> -->
+<!-- '--border-radius': isCircle ?'50vh':'50%' , -->
+<!--  , -->

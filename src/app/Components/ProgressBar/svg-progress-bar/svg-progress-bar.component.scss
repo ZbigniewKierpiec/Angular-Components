@@ -1,0 +1,49 @@
+/* Define custom variables for color */
+.box {
+  --color: #707b81;
+  --meter: #00ff00;
+  /* Flexbox layout */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Styles for SVG elements */
+svg {
+  display: inline-flex;
+  vertical-align: bottom;
+  width: 145px;
+  height: 145px;
+  margin: 0 35px 10px;
+}
+
+/* Styles for circle elements */
+
+circle {
+  stroke: var(--color);
+  stroke-width: 10px;
+  stroke-dasharray: 0;
+  fill: none;
+}
+
+/* Styles for meter elements */
+
+.meter {
+  stroke-width: 10px;
+  stroke: var(--meter);
+  fill: none;
+  /* Transition effect for smooth animation */
+  transition: stroke-dashoffset 1s cubic-bezier(0.43, 0.41, 0.22, 0.91);
+  transform-origin: center center;
+  transform: rotate(-90deg) scaleX(-1);
+}
+
+/* Styles for text elements */
+text {
+  fill: black;
+  font-weight: bold;
+  /* Styles for progress text */
+  .progress-text {
+    font-size: 14px;
+  }
+}

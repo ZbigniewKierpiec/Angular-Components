@@ -1,0 +1,6 @@
+<div [attr.data-content]="item" class="progress-bar">
+  <!-- Bind data-content attribute to item variable -->
+  <span class="progress-bar__fill" [style.width.%]="item"></span>
+  <!-- Use item variable to set width dynamically -->
+</div>
+<button (click)="increment()">add</button>
