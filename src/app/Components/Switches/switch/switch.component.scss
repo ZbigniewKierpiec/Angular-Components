@@ -82,7 +82,7 @@
       z-index: -2;
 
 &.active{
-  animation: rippleAnimation .7s ease-out;
+  animation: overlay-animation .7s ease-out;
 }
      }
 
@@ -107,7 +107,7 @@
 
 
 
-@keyframes rippleAnimation {
+@keyframes overlay-animation {
   0% {
     transform: scale(0) , translate(-50%,-50%)  ;
 
