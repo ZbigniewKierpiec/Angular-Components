@@ -52,6 +52,8 @@ import { OverflowBadgeComponent } from './Components/Badge/overflow-badge/overfl
 import { ProgressBarComponent } from './Components/ProgressBar/progress-bar/progress-bar.component';
 import { CircularProgressComponent } from './Components/ProgressBar/circular-progress/circular-progress.component';
 import { SvgProgressBarComponent } from './Components/ProgressBar/svg-progress-bar/svg-progress-bar.component';
+import { SwitchComponent } from './Components/Switches/switch/switch.component';
+import { DataSwitchComponent } from './Components/Switches/data-switch/data-switch.component';
 
 @NgModule({
   declarations: [
@@ -101,6 +103,8 @@ import { SvgProgressBarComponent } from './Components/ProgressBar/svg-progress-b
     ProgressBarComponent,
     CircularProgressComponent,
     SvgProgressBarComponent,
+    SwitchComponent,
+    DataSwitchComponent,
   ],
   providers: [ThemeService],
   bootstrap: [AppComponent],

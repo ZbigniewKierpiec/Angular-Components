@@ -1,0 +1,129 @@
+
+
+.toggle {
+  --size:3rem;
+  --text:#fff
+  --circle:#F5F7F8;
+  --on:#40A578;
+  --off:#BFBFBF;
+
+  width: 6.3rem;
+  position: relative;
+  display: flex;
+  cursor: pointer;
+  position: relative;
+
+  .switch {
+    position: absolute;
+    visibility: hidden;
+  }
+
+  .circle {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: var(--size);
+    border-radius: var(--size);
+    box-shadow: 0 0 1px rgba(0,0,0,0.5);
+    background-color:var(--off);
+
+  z-index:1;
+
+
+    &:after {
+
+      content: attr(data-off);
+      position: absolute;
+      left: var(--size);
+      right: 3px;
+      text-align: center;
+      font-size: 1.8rem;
+      line-height:var(--size);
+      color: var(--text);
+      text-transform: uppercase;
+      font-size: 1.2rem;
+
+    }
+
+    .icon {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left:2%;
+
+      // height: var(--size);
+      // width: var(--size);
+     width: 2.7rem;
+     height: 2.7rem;
+      align-self: center;
+      border-radius: 50%;
+      box-shadow: inset 0 0 3px rgba(0,0,0,0.5);
+      background-color: var(--circle);
+      background-color: white;
+      z-index: 100;
+      -webkit-transition: -webkit-transform 0.25s ease, left 0.25s ease;
+    }
+
+
+
+
+
+
+  }
+
+
+  .overlay{
+
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50% , -50%);
+
+      background-color:inherit;
+      border-radius: var(--size);
+
+      z-index: -2;
+
+&.active{
+  animation: rippleAnimation .7s ease-out;
+}
+     }
+
+
+  .switch:checked + .circle {
+    background-color: var(--on);
+
+
+    &:after {
+      content: attr(data-on);
+      right: var(--size);
+      left: 3px;
+    }
+
+    .icon {
+      left: 100%;
+      -webkit-transform: translateX(-105%) translateY(-50%);
+    }
+  }
+}
+
+
+
+
+@keyframes rippleAnimation {
+  0% {
+    transform: scale(0) , translate(-50%,-50%)  ;
+
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2) , translate(-50%,-50%)     ;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0px 0px 0px 10px rgba(97, 132, 6, 0.75);
+  }
+}
