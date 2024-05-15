@@ -56,6 +56,9 @@ import { SwitchComponent } from './Components/Switches/switch/switch.component';
 import { DataSwitchComponent } from './Components/Switches/data-switch/data-switch.component';
 import { Switch3Component } from './Components/Switches/switch3/switch3.component';
 import { Switch4Component } from './Components/Switches/switch4/switch4.component';
+import { Switch5Component } from './Components/Switches/switch5/switch5.component';
+import { TransferListComponent } from './Components/Transfer-List/transfer-list/transfer-list.component';
+
 
 @NgModule({
   declarations: [
@@ -109,6 +112,9 @@ import { Switch4Component } from './Components/Switches/switch4/switch4.componen
     DataSwitchComponent,
     Switch3Component,
     Switch4Component,
+    Switch5Component,
+    TransferListComponent,
+  
   ],
   providers: [ThemeService],
   bootstrap: [AppComponent],
