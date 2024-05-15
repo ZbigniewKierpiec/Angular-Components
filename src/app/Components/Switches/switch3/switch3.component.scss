@@ -1,0 +1,193 @@
+
+/* Styles for the toggle switch */
+.toggle {
+  /* Custom properties for size and colors */
+ --size:3rem;
+ --text:#fff
+ --circle:#F5F7F8;
+ --on:#40A578;
+ --off:#BFBFBF;
+/* General styling */
+ width: 6.3rem;
+ position: relative;
+ display: flex;
+ cursor: pointer;
+ position: relative;
+
+/* Switch styling */
+ .switch {
+   position: absolute;
+   visibility: hidden;
+
+ }
+/* Circle styling */
+ .circle {
+   position: relative;
+   display: inline-block;
+   width: 100%;
+   height: var(--size);
+   border-radius: var(--size);
+   box-shadow: 0 0 1px rgba(0,0,0,0.5);
+   background-color:var(--off);
+   overflow: hidden;
+ z-index:1;
+
+
+
+
+
+
+
+/* Pseudo-element for text content */
+&::before{
+  transition:all .3s linear;
+  content: 'on';
+  position: absolute;
+  left: var(--size);
+  left: 15px;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height:var(--size);
+  color: var(--text);
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  transform: translateY(-50px);
+  opacity: 0;
+}
+   &:after {
+    transition:all .3s linear;
+     content: 'off';
+     position: absolute;
+     left: var(--size);
+     right: 3px;
+     text-align: center;
+     font-size: 1.8rem;
+     font-weight: 500;
+     line-height:var(--size);
+     color: var(--text);
+     text-transform: uppercase;
+     font-size: 1.2rem;
+     transform: translateY(0px);
+     opacity: 1;
+   }
+/* Icon styling */
+   .icon {
+     position: absolute;
+     top: 50%;
+     transform: translateY(-50%);
+     left:2%;
+
+    width: 2.7rem;
+    height: 2.7rem;
+     align-self: center;
+     border-radius: 50%;
+     box-shadow: inset 0 0 3px rgba(0,0,0,0.5);
+     background-color: var(--circle);
+     background-color: white;
+     z-index: 100;
+     -webkit-transition: -webkit-transform 0.25s ease, left 0.25s ease;
+   }
+
+
+
+
+
+
+ }
+/* Overlay styling */
+
+ .overlay{
+
+
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50% , -50%);
+
+     background-color:inherit;
+     border-radius: var(--size);
+
+     z-index: -2;
+
+
+/* Animation for overlay */
+
+&.active{
+ animation: rippleAnimation .7s ease-out;
+}
+    }
+
+/* Styles when the switch is checked */
+ .switch:checked + .circle {
+   background-color: var(--on);
+
+
+/* Pseudo-element for displaying text when switch is checked */
+   &::before{
+
+    content: 'on';
+    position: absolute;
+    left: var(--size);
+    left: 15px;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height:var(--size);
+    color: var(--text);
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    transform: translateY(0px);
+    opacity: 1;
+    color: white;
+
+
+
+
+   }
+   &:after {
+    content: 'off';
+     position: absolute;
+     left: var(--size);
+     right: 3px;
+     text-align: center;
+     font-size: 1.8rem;
+     font-weight: 500;
+     line-height:var(--size);
+     color: var(--text);
+     text-transform: uppercase;
+     font-size: 1.2rem;
+     transform: translateY(-50px);
+     opacity: 0;
+   }
+
+/* Styles for the icon within the circle */
+
+   .icon {
+     left: 100%;
+
+     -webkit-transform: translateX(-105%) translateY(-50%);
+   }
+ }
+}
+
+
+/* Keyframes for overlay animation */
+
+@keyframes rippleAnimation {
+ 0% {
+   transform: scale(0) , translate(-50%,-50%)  ;
+
+   width: 100%;
+   height: 100%;
+   opacity: 1;
+ }
+ 100% {
+   transform: scale(2) , translate(-50%,-50%)     ;
+   opacity: 0;
+   width: 100%;
+   height: 100%;
+   box-shadow: 0px 0px 0px 10px rgba(97, 132, 6, 0.75);
+
+ }
+}

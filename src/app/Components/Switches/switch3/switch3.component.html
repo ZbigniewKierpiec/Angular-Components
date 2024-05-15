@@ -1,0 +1,15 @@
+
+<!-- This is a toggle switch wrapped in a <div> element -->
+  <div class="toggle" (click)="toggleCheckbox()">
+    <!-- This is an input element representing the checkbox -->
+    <input
+      [(ngModel)]="isChecked"
+      type="checkbox"
+      name="switch1"
+      class="switch"
+    />
+    <!-- This span represents the circle shape inside the toggle switch -->
+    <span data-off="off" data-on="on" class="circle"><i class="icon"></i></span>
+    <!-- This span represents the overlay effect when the toggle switch is clicked -->
+    <span #overlay class="overlay"></span>
+  </div>

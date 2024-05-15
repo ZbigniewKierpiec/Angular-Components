@@ -1,23 +1,24 @@
 
-
+/* Styles for the toggle switch */
 .toggle {
+   /* Custom properties for size and colors */
   --size:3rem;
   --text:#fff
   --circle:#F5F7F8;
   --on:#40A578;
   --off:#BFBFBF;
-
+/* General styling */
   width: 6.3rem;
   position: relative;
   display: flex;
   cursor: pointer;
   position: relative;
-
+ /* Switch styling */
   .switch {
     position: absolute;
     visibility: hidden;
   }
-
+/* Circle styling */
   .circle {
     position: relative;
     display: inline-block;
@@ -29,7 +30,7 @@
 
   z-index:1;
 
-
+ /* Pseudo-element for text content */
     &:after {
 
       content: attr(data-off);
@@ -45,15 +46,13 @@
       font-size: 1.2rem;
 
     }
-
+/* Icon styling */
     .icon {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
       left:2%;
 
-      // height: var(--size);
-      // width: var(--size);
      width: 2.7rem;
      height: 2.7rem;
       align-self: center;
@@ -71,7 +70,7 @@
 
 
   }
-
+/* Overlay styling */
 
   .overlay{
 
@@ -86,21 +85,28 @@
 
       z-index: -2;
 
+
+/* Animation for overlay */
+
 &.active{
   animation: rippleAnimation .7s ease-out;
 }
      }
 
-
+ /* Styles when the switch is checked */
   .switch:checked + .circle {
     background-color: var(--on);
 
+
+/* Pseudo-element for displaying text when switch is checked */
 
     &:after {
       content: attr(data-on);
       right: var(--size);
       left: 3px;
     }
+
+ /* Styles for the icon within the circle */
 
     .icon {
       left: 100%;
@@ -110,7 +116,7 @@
 }
 
 
-
+/* Keyframes for overlay animation */
 
 @keyframes rippleAnimation {
   0% {

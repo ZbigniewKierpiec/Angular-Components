@@ -1,23 +1,24 @@
 
-
+/* Styles for the toggle switch */
 .toggle {
+  /* Custom properties for size and colors */
   --size:3rem;
   --text:#fff
   --circle:#F5F7F8;
   --on:#40A578;
   --off:#BFBFBF;
-
+/* General styling */
   width: 6.3rem;
   position: relative;
   display: flex;
   cursor: pointer;
   position: relative;
-
+ /* Switch styling */
   .switch {
     position: absolute;
     visibility: hidden;
   }
-
+/* Circle styling */
   .circle {
     position: relative;
     display: inline-block;
@@ -29,17 +30,7 @@
 
   z-index:1;
 
-
-    // &:after {
-    //   content: attr(data-off);
-    //   position: absolute;
-    //   left: var(--size);
-    //   right: 3px;
-    //   text-align: center;
-    //   font-size: 1.8rem;
-    //   line-height:var(--size);
-    //   color: var(--text);
-    // }
+ /* Icon styling */
 
     .icon {
       position: absolute;
@@ -47,8 +38,6 @@
       transform: translateY(-50%);
       left:2%;
 
-      // height: var(--size);
-      // width: var(--size);
      width: 2.7rem;
      height: 2.7rem;
       align-self: center;
@@ -67,7 +56,7 @@
 
   }
 
-
+ /* Overlay styling */
   .overlay{
 
 
@@ -80,22 +69,16 @@
       border-radius: var(--size);
 
       z-index: -2;
-
+/* Animation for overlay */
 &.active{
   animation: overlay-animation .7s ease-out;
 }
      }
 
-
+ /* Styles when the switch is checked */
   .switch:checked + .circle {
     background-color: var(--on);
 
-
-    // &:after {
-    //   content: attr(data-on);
-    //   right: var(--size);
-    //   left: 3px;
-    // }
 
     .icon {
       left: 100%;
@@ -105,7 +88,7 @@
 }
 
 
-
+/* Keyframes for overlay animation */
 
 @keyframes overlay-animation {
   0% {

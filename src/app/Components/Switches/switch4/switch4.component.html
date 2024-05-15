@@ -1,0 +1,33 @@
+<!-- This is a toggle switch wrapped in a <div> element -->
+  <div class="toggle" (click)="toggleAnimation()"        (click)="toggleCheckbox()">
+    <!-- This is an input element representing the checkbox -->
+    <input
+      [(ngModel)]="isChecked"
+      type="checkbox"
+      name="switch1"
+      class="switch"
+    />
+    <!-- This span represents the circle shape inside the toggle switch -->
+    <span data-off="off" data-on="on" class="circle">
+      <div class="icon">
+
+        <div [ngClass]="{ active: active }" #squareElement class="square">
+          <!-- SVG element containing a path representing a tick -->
+          <svg class="svg" viewBox="0 0 100 100">
+            <!-- Path element defining the tick shape -->
+            <path
+              id="tick"
+              d="M 20 50 L 40 70 L 80 30"
+              fill="none"
+              stroke-width="5"
+              stroke="green"
+              class="path"
+            ></path>
+          </svg>
+        </div>
+
+      </div>
+    </span>
+    <!-- This span represents the overlay effect when the toggle switch is clicked -->
+    <span #overlay class="overlay"></span>
+  </div>

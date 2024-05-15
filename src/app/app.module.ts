@@ -54,6 +54,8 @@ import { CircularProgressComponent } from './Components/ProgressBar/circular-pro
 import { SvgProgressBarComponent } from './Components/ProgressBar/svg-progress-bar/svg-progress-bar.component';
 import { SwitchComponent } from './Components/Switches/switch/switch.component';
 import { DataSwitchComponent } from './Components/Switches/data-switch/data-switch.component';
+import { Switch3Component } from './Components/Switches/switch3/switch3.component';
+import { Switch4Component } from './Components/Switches/switch4/switch4.component';
 
 @NgModule({
   declarations: [
@@ -105,6 +107,8 @@ import { DataSwitchComponent } from './Components/Switches/data-switch/data-swit
     SvgProgressBarComponent,
     SwitchComponent,
     DataSwitchComponent,
+    Switch3Component,
+    Switch4Component,
   ],
   providers: [ThemeService],
   bootstrap: [AppComponent],

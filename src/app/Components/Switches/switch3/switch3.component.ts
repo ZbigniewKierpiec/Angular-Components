@@ -1,11 +1,13 @@
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'app-data-switch',
-  templateUrl: './data-switch.component.html',
-  styleUrls: ['./data-switch.component.scss'],
+  selector: 'app-switch3',
+  templateUrl: './switch3.component.html',
+  styleUrls: ['./switch3.component.scss']
 })
-export class DataSwitchComponent implements OnInit {
+export class Switch3Component implements OnInit {
+
+
 
 
  // Declaring a ViewChild to access the overlay element
@@ -42,5 +44,12 @@ export class DataSwitchComponent implements OnInit {
 
 
 
-  ngOnInit(): void {}
+
+
+
+
+
+  ngOnInit(): void {
+  }
+
 }
