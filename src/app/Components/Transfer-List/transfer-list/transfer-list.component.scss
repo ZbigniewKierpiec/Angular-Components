@@ -2,13 +2,12 @@
   // display: flex;
   // border: 1px solid black;
   display: grid;
-  grid-template-columns: 1fr .5fr 1fr;
+  grid-template-columns: 1fr 0.5fr 1fr;
   grid-template-rows: 1fr;
   border-radius: 0.7rem;
   background-color: rgba(128, 128, 128, 0.053);
   overflow: hidden;
-  padding: .5rem;
-
+  padding: 0.5rem;
 }
 .board .list {
   height: 250px;
@@ -17,10 +16,9 @@
   overflow-y: auto;
   box-shadow: 0px 0px 15px -9px #000000;
   border: 1px solid rgba(0, 0, 0, 0.146);
-  border-radius: .4rem;
+  border-radius: 0.4rem;
 }
 .item {
-
   width: 100%;
   position: relative;
   padding: 0.6rem 1rem;
@@ -57,19 +55,38 @@ label {
   align-items: center;
   grid-gap: 1rem;
 
-  button{
-    transition: all .3s linear;
+  button {
+    transition: all 0.3s linear;
     width: 85%;
-    padding: .3rem 1rem;
-    border-radius: .2rem;
-    border:2px solid rgba(0, 0, 0, 0.084);
-    background-color:transparent;
-    &.active{
+    padding: 0.3rem 1rem;
+    border-radius: 0.2rem;
+    border: 2px solid rgba(0, 0, 0, 0.084);
+    background-color: transparent;
+    &.active {
+      border: 2px solid #8ab8e6;
+      color: #8ab8e6;
+    }
 
-      border: 2px solid #8AB8E6;
-      color:#8AB8E6 ;
+    &.active2 {
+      border: 2px solid #8ab8e6;
+      color: #8ab8e6;
     }
   }
+
+  // .btn-right{
+  //   &.active{
+  //    border: 2px solid #8AB8E6;
+  //    color:#8AB8E6 ;
+  //   }
+
+  //  }
+
+  //  .btn-left{
+  //    &.active{
+  //      border: 2px solid #8AB8E6;
+  //      color:#8AB8E6 ;
+  //    }
+  //  }
 
   // .btn{
   //   &.active{
@@ -78,12 +95,7 @@ label {
   //     color:#8AB8E6 ;
   //   }
   // }
-
 }
-
-
-
-
 
 .ripple {
   position: absolute;

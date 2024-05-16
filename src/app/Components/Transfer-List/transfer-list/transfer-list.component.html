@@ -1,42 +1,55 @@
 <div class="board">
-  <div       class="list left">
-    <label appRipple   class="item" *ngFor="let item of leftList; let i = index">
+  <div class="list left">
+    <label appRipple class="item left" *ngFor="let item of leftList; let i = index">
       <input
         type="checkbox"
         [id]="'left-' + i"
         [value]="item"
         [checked]="transList.includes(item)"
-        (change)="handleCheckbox(item)"
+        (change)="handleCheckbox(item, 'left')"
       />
-      <label       [for]="'left-' + i">{{ item }}</label>
+      <label [for]="'left-' + i">{{ item }}</label>
     </label>
   </div>
-
-  <!-- [ngClass]="{'active':anyCheckboxChecked() && isChecked  && rightList.length == 0 || rightList.length > 0   }"   -->
-
-
-
+  <!-- activeTwo && list=='left' && numCheckedCheckboxes -->
   <div class="controls">
-    <button             (click)="moveLeft()"><i class="fa-solid fa-angle-left"></i></button>
-    <button class="btn"       (click)="moveRight()">
+    <button
+      class="btn-left"
+  
+       [ngClass]="{'active': activeTwo && numCheckedCheckboxes  }"
+      (click)="moveLeft()"
+    >
+      <i class="fa-solid fa-angle-left"></i>
+    </button>
+    <button
+      class="btn-right"
+     [ngClass]="{'active':active && numCheckedCheckboxes}"
+      (click)="moveRight()"
+    >
       <i class="fa-solid fa-angle-right"></i>
     </button>
-    <button   [ngClass]="{ 'active': rightList.length !=0 }"       (click)="moveAllLeft()">
+    <button
+    [ngClass]="{ 'active': rightList.length !=0 }"
+      (click)="moveAllLeft()"
+    >
       <i class="fa-solid fa-angles-left"></i>
     </button>
-    <button    [ngClass]="{ 'active': rightList.length == 0 }"          (click)="moveAllRight()">
+    <button
+      [ngClass]="{ active: rightList.length == 0 || leftList.length != 0 }"
+      (click)="moveAllRight()"
+    >
       <i class="fa-solid fa-angles-right"></i>
     </button>
   </div>
 
   <div class="list right">
-    <label   appRipple       class="item" *ngFor="let item of rightList; let i = index">
+    <label appRipple class="item right" *ngFor="let item of rightList; let i = index">
       <input
         type="checkbox"
         [id]="'right-' + i"
         [value]="item"
         [checked]="transList.includes(item)"
-        (change)="handleCheckbox(item)"
+        (change)="handleCheckbox(item, 'right')"
       />
       <label [for]="'right-' + i">{{ item }}</label>
     </label>

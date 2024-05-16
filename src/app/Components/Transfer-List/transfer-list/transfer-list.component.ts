@@ -1,35 +1,35 @@
-import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { NgSwitchCase } from '@angular/common';
+import {
+  Component,
+  ElementRef,
+  OnInit,
+  Renderer2,
+  ViewChild,
+} from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-transfer-list',
   templateUrl: './transfer-list.component.html',
-  styleUrls: ['./transfer-list.component.scss']
+  styleUrls: ['./transfer-list.component.scss'],
 })
-export class TransferListComponent {
+export class TransferListComponent implements OnInit {
   @ViewChild('item') item?: ElementRef;
-  leftList: string[] = ["Item 1", "Item 2", "Item 3"];
-  rightList: string[] = ["Item 4", "Item 5", "Item 6"];
+  leftList: string[] = ['Item 1', 'Item 2', 'Item 3'];
+  rightList: string[] = ['Item 4', 'Item 5', 'Item 6'];
   transList: string[] = [];
-  isChecked:any=null;
+  isChecked: any = null;
+  active: boolean = false;
+  activeTwo: boolean = false;
+  activeThree: boolean = false;
+  list: string = '';
+  numCheckedCheckboxes: any;
   constructor(private el: ElementRef, private renderer: Renderer2) {}
 
-  anyCheckboxChecked(): boolean {
-    return this.transList.length > 0;
-
-  }
-
-  handleCheckbox(val: string) {
-      this.isChecked = this.transList.includes(val);
-      this.isChecked = true;
-      if (this.isChecked) {
-             this.isChecked
-      } else {
-        // Checkbox with value 'val' is unchecked
-        this.isChecked=false;
-      }
-
+  handleCheckbox(val: string, list: string) {
     const index = this.transList.indexOf(val);
-    const copyList = [...this.transList];
+
+    let copyList = [...this.transList];
 
     if (index === -1) {
       copyList.push(val);
@@ -37,23 +37,86 @@ export class TransferListComponent {
       copyList.splice(index, 1);
     }
     this.transList = copyList;
+
+    this.numCheckedCheckboxes = this.transList.length;
+
+    if (list === 'left' && this.numCheckedCheckboxes > 0) {
+      this.active = true;
+      this.activeTwo = false;
+      
+    } else if (list === 'right' && this.numCheckedCheckboxes > 0) {
+      this.activeTwo = true;
+      this.active = false;
+    } else{
+      this.activeThree = true;
+    }
+
+
+
+    console.log(val)
+    // switch (list) {
+    //   case 'left':
+
+    //     this.active = this.numCheckedCheckboxes > 0;
+
+    //     this.activeTwo = false;
+
+    //     break;
+
+    //   case 'right':
+
+    //     this.activeTwo = this.numCheckedCheckboxes > 0;
+    //     this.active = false;
+    //     this.activeThree=true;
+    //     break;
+
+    //   default:
+    //     // this.active = this.numCheckedCheckboxes > 0;
+    //     // this.activeTwo = this.numCheckedCheckboxes > 0;
+    //     this.active = true;
+    //     this.activeTwo = true;
+
+    //     break;
+    // }
   }
 
   moveLeft() {
-    this.isChecked = false;
-    const newRightList = this.rightList.filter(item => !this.transList.includes(item));
-    this.leftList = [...this.leftList, ...this.transList];
+    const newRightList = this.rightList.filter(
+      (item) => !this.transList.includes(item) && !this.leftList.includes(item)
+    );
+    this.leftList = [
+      ...this.leftList,
+      ...this.transList.filter((item) => !this.leftList.includes(item)),
+    ];
     this.rightList = newRightList;
     this.transList = [];
+    this.active = false;
+    this.activeTwo = false;
   }
 
   moveRight() {
-    this.isChecked = false;
-    const newLeftList = this.leftList.filter(item => !this.transList.includes(item));
-    this.rightList = [...this.rightList, ...this.transList];
+    const newLeftList = this.leftList.filter(
+      (item) => !this.transList.includes(item) && !this.rightList.includes(item)
+    );
+    this.rightList = [
+      ...this.rightList,
+      ...this.transList.filter((item) => !this.rightList.includes(item)),
+    ];
     this.leftList = newLeftList;
     this.transList = [];
+    this.active = false;
+    this.activeTwo = false;
+  }
 
+  anyCheckboxCheckedLeft(): boolean {
+    return (
+      this.transList.length > 0 && // Check if any checkboxes are checked
+      this.rightList.length > 0 // Check if the right list is not empty
+    );
+  }
+
+  anyCheckboxChecked(): boolean {
+    return this.transList.length > 0 && this.leftList.length > 0;
   }
 
   moveAllLeft() {
@@ -68,10 +131,15 @@ export class TransferListComponent {
 
 
 
+ngAfterViewInit(): void {
+  //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
+  //Add 'implements AfterViewInit' to the class.
+
+}
 
 
 
 
 
-
+  ngOnInit() {}
 }
