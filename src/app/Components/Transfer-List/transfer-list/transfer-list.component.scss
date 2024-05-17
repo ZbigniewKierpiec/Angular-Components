@@ -1,6 +1,5 @@
+/* Styling for the main board container */
 .board {
-  // display: flex;
-  // border: 1px solid black;
   display: grid;
   grid-template-columns: 1fr 0.5fr 1fr;
   grid-template-rows: 1fr;
@@ -9,6 +8,8 @@
   overflow: hidden;
   padding: 0.5rem;
 }
+
+/* Styling for list elements within the board */
 .board .list {
   height: 250px;
   width: 200px;
@@ -18,6 +19,9 @@
   border: 1px solid rgba(0, 0, 0, 0.146);
   border-radius: 0.4rem;
 }
+
+/* Styling for individual items within the lists */
+
 .item {
   width: 100%;
   position: relative;
@@ -27,10 +31,16 @@
   align-items: center;
   cursor: pointer;
   overflow: hidden;
+
+  input {
+    display: none;
+  }
   &:hover {
     background-color: rgba(211, 204, 204, 0.342);
   }
 }
+
+/* Styling for labels */
 
 label {
   cursor: pointer;
@@ -39,12 +49,44 @@ label {
   position: relative !important;
 }
 
+/* Styling for custom checkboxes */
+input:checked + .customBox::before {
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.4s linear;
+}
+
+/* Base styling for custom checkboxes */
+.customBox {
+  position: relative;
+  background-color: lightgrey;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.2rem;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 40%;
+    background-color: #8ab8e6;
+    border-radius: 50%;
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+/* Additional styling for left and right lists */
 .board .list.left {
   border-bottom: 1px solid rgba(0, 0, 0, 0.146);
 }
 .board .list.right {
   border-bottom: 1px solid rgba(0, 0, 0, 0.146);
 }
+
+/* Styling for the controls section in the middle column */
 .board .controls {
   padding: 0 1rem;
   width: 100px;
@@ -72,30 +114,9 @@ label {
       color: #8ab8e6;
     }
   }
-
-  // .btn-right{
-  //   &.active{
-  //    border: 2px solid #8AB8E6;
-  //    color:#8AB8E6 ;
-  //   }
-
-  //  }
-
-  //  .btn-left{
-  //    &.active{
-  //      border: 2px solid #8AB8E6;
-  //      color:#8AB8E6 ;
-  //    }
-  //  }
-
-  // .btn{
-  //   &.active{
-
-  //     border: 2px solid #8AB8E6;
-  //     color:#8AB8E6 ;
-  //   }
-  // }
 }
+
+/* Ripple effect for interactive elements */
 
 .ripple {
   position: absolute;
@@ -111,6 +132,8 @@ label {
   transform: scale(0);
   animation: ripple-effect 0.5s linear;
 }
+
+/* Keyframes for ripple animation */
 
 @keyframes ripple-effect {
   to {

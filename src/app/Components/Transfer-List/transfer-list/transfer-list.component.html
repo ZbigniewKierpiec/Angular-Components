@@ -1,6 +1,14 @@
 <div class="board">
+  <!-- Left List Section -->
   <div class="list left">
-    <label appRipple class="item left" *ngFor="let item of leftList; let i = index">
+    <!-- Iterate over leftList and create checkbox items -->
+    <label
+      appRipple
+      class="item left"
+      [for]="'left-' + i"
+      *ngFor="let item of leftList; let i = index"
+    >
+      <!-- Checkbox input -->
       <input
         type="checkbox"
         [id]="'left-' + i"
@@ -8,32 +16,41 @@
         [checked]="transList.includes(item)"
         (change)="handleCheckbox(item, 'left')"
       />
+      <!-- Custom checkbox styling -->
+
+      <label class="customBox" [for]="'left-' + i"></label>
+      <!-- Label for the checkbox -->
       <label [for]="'left-' + i">{{ item }}</label>
     </label>
   </div>
-  <!-- activeTwo && list=='left' && numCheckedCheckboxes -->
+
+  <!-- Control Buttons Section -->
   <div class="controls">
+    <!-- Move selected items to the left list -->
     <button
       class="btn-left"
-  
-       [ngClass]="{'active': activeTwo && numCheckedCheckboxes  }"
+      [ngClass]="{ active:activeTwo && numCheckedCheckboxes }"
       (click)="moveLeft()"
     >
       <i class="fa-solid fa-angle-left"></i>
     </button>
+
+    <!-- Move selected items to the right list -->
     <button
       class="btn-right"
-     [ngClass]="{'active':active && numCheckedCheckboxes}"
+      [ngClass]="{ active: active && numCheckedCheckboxes }"
       (click)="moveRight()"
     >
       <i class="fa-solid fa-angle-right"></i>
     </button>
+    <!-- Move all items to the left list -->
     <button
-    [ngClass]="{ 'active': rightList.length !=0 }"
+      [ngClass]="{ active: rightList.length != 0 }"
       (click)="moveAllLeft()"
     >
       <i class="fa-solid fa-angles-left"></i>
     </button>
+    <!-- Move all items to the right list -->
     <button
       [ngClass]="{ active: rightList.length == 0 || leftList.length != 0 }"
       (click)="moveAllRight()"
@@ -41,9 +58,16 @@
       <i class="fa-solid fa-angles-right"></i>
     </button>
   </div>
-
+  <!-- Right List Section -->
   <div class="list right">
-    <label appRipple class="item right" *ngFor="let item of rightList; let i = index">
+    <!-- Iterate over rightList and create checkbox items -->
+    <label
+      appRipple
+      class="item right"
+      [for]="'right-' + i"
+      *ngFor="let item of rightList; let i = index"
+    >
+      <!-- Checkbox input -->
       <input
         type="checkbox"
         [id]="'right-' + i"
@@ -51,6 +75,13 @@
         [checked]="transList.includes(item)"
         (change)="handleCheckbox(item, 'right')"
       />
+
+      <!-- Custom checkbox styling -->
+
+      <label class="customBox" [for]="'right-' + i"></label>
+
+      <!-- Label for the checkbox -->
+
       <label [for]="'right-' + i">{{ item }}</label>
     </label>
   </div>

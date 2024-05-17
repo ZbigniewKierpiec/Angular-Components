@@ -14,23 +14,30 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./transfer-list.component.scss'],
 })
 export class TransferListComponent implements OnInit {
+  // ViewChild to reference HTML element if necessary
   @ViewChild('item') item?: ElementRef;
+  // Arrays to hold items for left and right lists
   leftList: string[] = ['Item 1', 'Item 2', 'Item 3'];
   rightList: string[] = ['Item 4', 'Item 5', 'Item 6'];
+  // Array to hold temporarily selected items
   transList: string[] = [];
+
+  // Variables to manage checkbox state and button activation
   isChecked: any = null;
   active: boolean = false;
   activeTwo: boolean = false;
-  activeThree: boolean = false;
+  // Other variables if necessary
   list: string = '';
   numCheckedCheckboxes: any;
   constructor(private el: ElementRef, private renderer: Renderer2) {}
+
+  // Method to handle checkbox selection
 
   handleCheckbox(val: string, list: string) {
     const index = this.transList.indexOf(val);
 
     let copyList = [...this.transList];
-
+    // Toggle the selection of the item
     if (index === -1) {
       copyList.push(val);
     } else {
@@ -38,47 +45,22 @@ export class TransferListComponent implements OnInit {
     }
     this.transList = copyList;
 
+    // Update the number of checked checkboxes
+
     this.numCheckedCheckboxes = this.transList.length;
+
+    // Toggle button activation based on list and checkbox selection
 
     if (list === 'left' && this.numCheckedCheckboxes > 0) {
       this.active = true;
       this.activeTwo = false;
-      
     } else if (list === 'right' && this.numCheckedCheckboxes > 0) {
       this.activeTwo = true;
       this.active = false;
-    } else{
-      this.activeThree = true;
     }
-
-
-
-    console.log(val)
-    // switch (list) {
-    //   case 'left':
-
-    //     this.active = this.numCheckedCheckboxes > 0;
-
-    //     this.activeTwo = false;
-
-    //     break;
-
-    //   case 'right':
-
-    //     this.activeTwo = this.numCheckedCheckboxes > 0;
-    //     this.active = false;
-    //     this.activeThree=true;
-    //     break;
-
-    //   default:
-    //     // this.active = this.numCheckedCheckboxes > 0;
-    //     // this.activeTwo = this.numCheckedCheckboxes > 0;
-    //     this.active = true;
-    //     this.activeTwo = true;
-
-    //     break;
-    // }
   }
+
+  // Method to move selected items from right to left list
 
   moveLeft() {
     const newRightList = this.rightList.filter(
@@ -94,6 +76,8 @@ export class TransferListComponent implements OnInit {
     this.activeTwo = false;
   }
 
+  // Method to move selected items from left to right list
+
   moveRight() {
     const newLeftList = this.leftList.filter(
       (item) => !this.transList.includes(item) && !this.rightList.includes(item)
@@ -108,38 +92,19 @@ export class TransferListComponent implements OnInit {
     this.activeTwo = false;
   }
 
-  anyCheckboxCheckedLeft(): boolean {
-    return (
-      this.transList.length > 0 && // Check if any checkboxes are checked
-      this.rightList.length > 0 // Check if the right list is not empty
-    );
-  }
-
-  anyCheckboxChecked(): boolean {
-    return this.transList.length > 0 && this.leftList.length > 0;
-  }
+  // Method to move all items from right to left list
 
   moveAllLeft() {
     this.leftList = [...this.leftList, ...this.rightList];
     this.rightList = [];
   }
 
+  // Method to move all items from left to right list
+
   moveAllRight() {
     this.rightList = [...this.leftList, ...this.rightList];
     this.leftList = [];
   }
-
-
-
-ngAfterViewInit(): void {
-  //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
-  //Add 'implements AfterViewInit' to the class.
-
-}
-
-
-
-
 
   ngOnInit() {}
 }
