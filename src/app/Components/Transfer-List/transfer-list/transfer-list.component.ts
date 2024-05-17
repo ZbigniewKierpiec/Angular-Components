@@ -1,7 +1,15 @@
+import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
 import { NgSwitchCase } from '@angular/common';
 import {
   Component,
   ElementRef,
+  Input,
   OnInit,
   Renderer2,
   ViewChild,
@@ -12,13 +20,24 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   selector: 'app-transfer-list',
   templateUrl: './transfer-list.component.html',
   styleUrls: ['./transfer-list.component.scss'],
+  animations: [
+    trigger('itemAnimation', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('400ms', style({ opacity: 1 })),
+      ]),
+      transition(':leave', [animate('400ms', style({ opacity: 0 }))]),
+    ]),
+  ],
 })
 export class TransferListComponent implements OnInit {
   // ViewChild to reference HTML element if necessary
   @ViewChild('item') item?: ElementRef;
   // Arrays to hold items for left and right lists
-  leftList: string[] = ['Item 1', 'Item 2', 'Item 3'];
-  rightList: string[] = ['Item 4', 'Item 5', 'Item 6'];
+  // @Input() leftList: string[] = ['Item 1', 'Item 2', 'Item 3'];
+  // @Input() rightList: string[] = ['Item 4', 'Item 5', 'Item 6'];
+  @Input() leftList: string[] = [];
+  @Input() rightList: string[] = [];
   // Array to hold temporarily selected items
   transList: string[] = [];
 
@@ -29,6 +48,10 @@ export class TransferListComponent implements OnInit {
   // Other variables if necessary
   list: string = '';
   numCheckedCheckboxes: any;
+  // Flag for move all left animation
+  // Animation control flags
+  moveLeftAnimationActive: boolean = false;
+  moveRightAnimationActive: boolean = false;
   constructor(private el: ElementRef, private renderer: Renderer2) {}
 
   // Method to handle checkbox selection
@@ -97,6 +120,7 @@ export class TransferListComponent implements OnInit {
   moveAllLeft() {
     this.leftList = [...this.leftList, ...this.rightList];
     this.rightList = [];
+   
   }
 
   // Method to move all items from left to right list
@@ -104,6 +128,7 @@ export class TransferListComponent implements OnInit {
   moveAllRight() {
     this.rightList = [...this.leftList, ...this.rightList];
     this.leftList = [];
+
   }
 
   ngOnInit() {}

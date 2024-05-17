@@ -2,8 +2,11 @@
   <!-- Left List Section -->
   <div class="list left">
     <!-- Iterate over leftList and create checkbox items -->
+    <!--  -->
     <label
       appRipple
+
+      [@itemAnimation]="{value: 'left-'+i}"
       class="item left"
       [for]="'left-' + i"
       *ngFor="let item of leftList; let i = index"
@@ -45,14 +48,14 @@
     </button>
     <!-- Move all items to the left list -->
     <button
-      [ngClass]="{ active: rightList.length != 0 }"
+    [ngClass]="{ active: rightList.length !=0 }"
       (click)="moveAllLeft()"
     >
       <i class="fa-solid fa-angles-left"></i>
     </button>
     <!-- Move all items to the right list -->
     <button
-      [ngClass]="{ active: rightList.length == 0 || leftList.length != 0 }"
+       [ngClass]="{ 'active'  :  leftList.length != 0}"
       (click)="moveAllRight()"
     >
       <i class="fa-solid fa-angles-right"></i>
@@ -61,8 +64,10 @@
   <!-- Right List Section -->
   <div class="list right">
     <!-- Iterate over rightList and create checkbox items -->
+    <!--   -->
     <label
       appRipple
+      [@itemAnimation]="{value: 'right-'+i}"
       class="item right"
       [for]="'right-' + i"
       *ngFor="let item of rightList; let i = index"
