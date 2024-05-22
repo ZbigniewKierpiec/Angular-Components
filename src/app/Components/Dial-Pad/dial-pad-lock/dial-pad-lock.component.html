@@ -1,0 +1,43 @@
+<div class="phone">
+  <div  class="display">
+    <i (click)="see()" class="fa-solid fa-eye"></i>
+    <label  class="label"   for="pass"><span *ngFor="let item of outputDigits">{{ item}}</span></label>
+      </div>
+  <div class="wrapper">
+    <div (click)="addDigit('1')" class="key" rel="1">
+      <span class="num">1</span> <span class="let clear">xxx</span>
+    </div>
+
+    <div (click)="addDigit('2')" class="key" rel="2">
+      <span class="num">2</span><span class="let">abc</span>
+    </div>
+    <div (click)="addDigit('3')" class="key" rel="3">
+      <span class="num">3</span><span class="let">def</span>
+    </div>
+
+    <div (click)="addDigit('4')" class="key" rel="4">
+      <span class="num">4</span><span class="let">ghi</span>
+    </div>
+    <div (click)="addDigit('5')" class="key" rel="5">
+      <span class="num">5</span><span class="let">jkl</span>
+    </div>
+    <div (click)="addDigit('6')" class="key" rel="6">
+      <span class="num">6</span><span class="let">mno</span>
+    </div>
+
+    <div (click)="addDigit('7')" class="key" rel="7">
+      <span class="num">7</span><span class="let">pqrs</span>
+    </div>
+    <div (click)="addDigit('8')" class="key" rel="8">
+      <span class="num">8</span><span class="let">tuv</span>
+    </div>
+    <div (click)="addDigit('9')" class="key" rel="9">
+      <span class="num">9</span><span class="let">wxyz</span>
+    </div>
+
+    <div  (click)="clear()" class="key special"><span>clear</span></div>
+    <div (click)="addDigit('0')" class="key"><span class="num">0</span></div>
+    <div (click)=" removeLastDigit()"        class="key special"><i class="fa-solid fa-left-long"></i></div>
+
+  </div>
+</div>

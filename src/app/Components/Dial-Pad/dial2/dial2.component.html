@@ -1,0 +1,9 @@
+<div id="pin">
+  <div class="dots">
+    <div class="dot" *ngFor="let dot of dots" [ngClass]="dot"></div>
+  </div>
+  <p>Enter the password</p>
+  <div class="numbers">
+    <div class="number" *ngFor="let number of numbers" (click)="onNumberClick(number)">{{ number }}</div>
+  </div>
+</div>

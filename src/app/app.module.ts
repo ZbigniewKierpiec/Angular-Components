@@ -59,6 +59,11 @@ import { Switch4Component } from './Components/Switches/switch4/switch4.componen
 import { Switch5Component } from './Components/Switches/switch5/switch5.component';
 import { TransferListComponent } from './Components/Transfer-List/transfer-list/transfer-list.component';
 
+import { HttpClientModule } from '@angular/common/http';
+import { DialPadLockComponent } from './Components/Dial-Pad/dial-pad-lock/dial-pad-lock.component';
+import { Thermostat4Component } from './Components/Thermostats/thermostat4/thermostat4.component';
+import { Dial2Component } from './Components/Dial-Pad/dial2/dial2.component';
+
 
 @NgModule({
   declarations: [
@@ -114,6 +119,13 @@ import { TransferListComponent } from './Components/Transfer-List/transfer-list/
     Switch4Component,
     Switch5Component,
     TransferListComponent,
+    DialPadLockComponent,
+    Thermostat4Component,
+    Dial2Component,
+ 
+
+
+
 
   ],
   providers: [ThemeService],
@@ -124,6 +136,8 @@ import { TransferListComponent } from './Components/Transfer-List/transfer-list/
     ReactiveFormsModule,
     BrowserAnimationsModule,
     HeatingThermostatComponent,
+    HttpClientModule
+
   ],
 })
 export class AppModule {}

@@ -1,26 +1,24 @@
-$slider-width: 3rem;
-$slider-height: 1.7rem;
-$slider-bottom: 1.4rem;
-$hvac-width: 32rem;
-$hvac-height: 32rem;
 
 .cont {
-  // width: 100%;
-  // height: 100vh;
+ --size:27rem;
+ --slider-width:3rem;
+ --slider-height:1.7rem;
+ --slider-bottom:1.4rem;
   display: flex;
   justify-content: center;
   align-items: center;
 
 }
 .box {
-  // width: 50rem;
-  width: 30rem;
-  // height: 50rem;
-  height: 30rem;
+
+  width:var(--size);
+
+  height:var(--size);
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+
 
 }
 .thermo {
@@ -28,20 +26,19 @@ $hvac-height: 32rem;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 400px;
-  width: 30rem;
-  height: 400px;
-  height: 30rem;
+
   background: #6d697f;
   background-color: #070401 !important;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 400px;
+
   width: 25rem;
-  height: 400px;
+  width: calc(var(--size));
+
   height: 25rem;
+  height: calc(var(--size));
   background: #6d697f;
   background-color: #070401;
   border-radius: 50%;
@@ -96,11 +93,14 @@ $hvac-height: 32rem;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 356px;
+    width: clamp(356px, calc(var(--size) - 356px), 500px);
 
     height: 356px;
+    height: clamp(356px, calc(var(--size) - 356px), 500px);
+
  opacity: .3;
  transition: all 0.3s linear .7s;
-    // background-color: red;
+
     &.disabled{
       opacity: 1;
     }
@@ -269,14 +269,14 @@ $hvac-height: 32rem;
     }
 
     .slider {
-      width: $slider-width;
+      width:var(--slider-width);
 
-      height: $slider-height;
+      height: var(--slider-height);
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
 
-      bottom: $slider-bottom;
+      bottom: var(--slider-bottom);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -405,3 +405,10 @@ $hvac-height: 32rem;
     opacity: 1;
   }
 }
+
+
+
+
+
+
+

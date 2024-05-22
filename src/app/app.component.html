@@ -1,99 +1,103 @@
-
-
-    <div class="box">
-      <app-button
-        [buttonType]="ButtonType.MaterialButton"
-        customClass="round-corners"
-        label="add more"
-      ></app-button>
-      <app-animated-button-border label="add more"></app-animated-button-border>
-      <app-animated-border label="next"></app-animated-border>
-      <app-icon-buttons
-        label="settings"
-        klasa="fa-solid fa-gear"
-      ></app-icon-buttons>
-      <app-info label="new message"></app-info>
-      <app-ripple-btn></app-ripple-btn>
-      <app-animated-control
-        title="Aspect ratio"
-        [options]="['16:9', '4:3', '1:1']"
-      ></app-animated-control>
-      <app-loading-btn></app-loading-btn>
-      <app-button-toggle-singiel></app-button-toggle-singiel>
-      <app-button-toggle-multiple></app-button-toggle-multiple>
-      <app-animated-svg-check></app-animated-svg-check>
-      <app-animated-slider></app-animated-slider>
-      <app-chip text="monday"></app-chip>
-      <app-acordion></app-acordion>
-      <app-tabs></app-tabs>
-      <!--
+<div class="box">
+  <app-button
+    [buttonType]="ButtonType.MaterialButton"
+    customClass="round-corners"
+    label="add more"
+  ></app-button>
+  <app-animated-button-border label="add more"></app-animated-button-border>
+  <app-animated-border label="next"></app-animated-border>
+  <app-icon-buttons
+    label="settings"
+    klasa="fa-solid fa-gear"
+  ></app-icon-buttons>
+  <app-info label="new message"></app-info>
+  <app-ripple-btn></app-ripple-btn>
+  <app-animated-control
+    title="Aspect ratio"
+    [options]="['16:9', '4:3', '1:1']"
+  ></app-animated-control>
+  <app-loading-btn></app-loading-btn>
+  <app-button-toggle-singiel></app-button-toggle-singiel>
+  <app-button-toggle-multiple></app-button-toggle-multiple>
+  <app-animated-svg-check></app-animated-svg-check>
+  <app-animated-slider></app-animated-slider>
+  <app-chip text="monday"></app-chip>
+  <app-acordion></app-acordion>
+  <app-tabs></app-tabs>
+  <!--
       <app-thermostat2></app-thermostat2>
       <app-thermo></app-thermo> -->
-      <app-steper></app-steper>
-      <app-toast></app-toast>
-      <div class="test">
-        <app-spinner width="60" height="60"></app-spinner>
-        <app-spinner2 width="4" height="4"></app-spinner2>
-        <app-spinner3 width="4" height="4"></app-spinner3>
-      </div>
+  <app-steper></app-steper>
+  <app-toast></app-toast>
+  <div class="test">
+    <app-spinner width="60" height="60"></app-spinner>
+    <app-spinner2 width="4" height="4"></app-spinner2>
+    <app-spinner3 width="4" height="4"></app-spinner3>
+  </div>
 
-      <app-side-nav></app-side-nav>
+  <app-side-nav></app-side-nav>
 
-      <button
-        class="dark"
-        [ngStyle]="{
-          'background-color': darkMode ? 'whitesmoke' : 'black',
-          color: darkMode ? 'black' : 'white'
-        }"
-        (click)="toggleTheme()"
-      >
-        {{ darkMode ? "light mode" : "dark Mode" }}
-      </button>
+  <button
+    class="dark"
+    [ngStyle]="{
+      'background-color': darkMode ? 'whitesmoke' : 'black',
+      color: darkMode ? 'black' : 'white'
+    }"
+    (click)="toggleTheme()"
+  >
+    {{ darkMode ? "light mode" : "dark Mode" }}
+  </button>
 
-      <app-test></app-test>
+  <app-test></app-test>
 
-      <app-dismissible-chip
-        text="zee"
-        color="white"
-        background="black"
-      ></app-dismissible-chip>
-      <app-chipwithinput></app-chipwithinput>
-      <app-menu></app-menu>
-      <app-divider></app-divider>
-      <app-notification></app-notification>
+  <app-dismissible-chip
+    text="zee"
+    color="white"
+    background="black"
+  ></app-dismissible-chip>
+  <app-chipwithinput></app-chipwithinput>
+  <app-menu></app-menu>
+  <app-divider></app-divider>
+  <app-notification></app-notification>
 
-      <app-image-avatars
-        name="Janet Lee"
-        image="https://images.unsplash.com/photo-1554151228-14d9def656e4?q=80&w=1972&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      ></app-image-avatars>
-      <app-text-avatar
-        backgroundColor="skyblue"
-        size="5"
-        title="s"
-      ></app-text-avatar>
-      <app-icon-avatar
-        icon="fa-solid fa-display"
-        size="5"
-        background="skyblue"
-        color="whitesmoke"
-      ></app-icon-avatar>
-      <app-basic-badge size="7" number="7" background="gray" color="white"      ></app-basic-badge>
+  <app-image-avatars
+    name="Janet Lee"
+    image="https://images.unsplash.com/photo-1554151228-14d9def656e4?q=80&w=1972&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  ></app-image-avatars>
+  <app-text-avatar
+    backgroundColor="skyblue"
+    size="5"
+    title="s"
+  ></app-text-avatar>
+  <app-icon-avatar
+    icon="fa-solid fa-display"
+    size="5"
+    background="skyblue"
+    color="whitesmoke"
+  ></app-icon-avatar>
+  <app-basic-badge
+    size="7"
+    number="7"
+    background="gray"
+    color="white"
+  ></app-basic-badge>
 
-      <app-overflow-badge content="2"  size="11" ></app-overflow-badge>
-     <app-progress-bar value="75"></app-progress-bar>
-     <app-circular-progress [percent]="7"></app-circular-progress>
-     <app-svg-progress-bar></app-svg-progress-bar>
-     <app-switch></app-switch>
-     <app-data-switch></app-data-switch>
-     <app-switch3></app-switch3>
-      <app-switch4></app-switch4>
-      <app-switch5></app-switch5>
-   <app-thermostat2></app-thermostat2>
-<app-transfer-list  [leftList]="['item 1','item 2','item 3']" [rightList]="['item 4','item 5','item 6']"   ></app-transfer-list>
-      <app-drawer></app-drawer>
+  <app-overflow-badge content="2" size="11"></app-overflow-badge>
+  <app-progress-bar value="75"></app-progress-bar>
+  <app-circular-progress [percent]="7"></app-circular-progress>
+  <app-svg-progress-bar></app-svg-progress-bar>
+  <app-switch></app-switch>
+  <app-data-switch></app-data-switch>
+  <app-switch3></app-switch3>
+  <app-switch4></app-switch4>
+  <app-switch5></app-switch5>
+  <app-thermostat2></app-thermostat2>
+  <app-transfer-list
+    [leftList]="['item 1', 'item 2', 'item 3']"
+    [rightList]="['item 4', 'item 5', 'item 6']"
+  ></app-transfer-list>
+  <app-dial-pad-lock></app-dial-pad-lock>
 
 
-    </div>
-
-
-
+  <app-drawer></app-drawer>
+</div>

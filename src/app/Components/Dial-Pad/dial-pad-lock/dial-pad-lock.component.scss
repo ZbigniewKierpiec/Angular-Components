@@ -1,0 +1,114 @@
+.phone {
+  // height: 410px;
+
+  // padding: 2rem 0;
+  // background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+$dot-size: 0.8em;
+.display {
+  width: 100%;
+  height: 5rem;
+  background-color: green;
+  color: white;
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  i{
+    position:absolute;
+
+    cursor: pointer;
+  }
+    
+  .label {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    display: flex;
+    &.active{
+      display: flex;
+    }
+
+    span {
+      margin-right: 1rem;
+    }
+  }
+  input {
+    display: block;
+    height: 100%;
+    font-size: 1rem;
+    display: none;
+  }
+}
+
+.wrapper {
+  width: 252px;
+
+  // position: relative;
+  // top: 116px;
+  // padding: 24px 0 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.key {
+  border-radius: 50px 50px 50px 50px;
+  color: #444;
+  width: 70px;
+  height: 70px;
+  text-align: center;
+  font-size: 30px;
+
+  border: 1px solid #444;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: yellow;
+}
+
+.key span {
+  display: block;
+  color: #444;
+
+  font-size: 12px;
+  text-transform: uppercase;
+
+  &.num {
+    font-size: 2rem;
+    margin-top: -0.5rem;
+  }
+  &.let {
+    margin-top: -1rem;
+    color: black;
+    &:nth-of-type(2) {
+      color: red;
+    }
+
+    &.clear {
+      visibility: hidden;
+    }
+  }
+}
+.key.special {
+  font-size: 1.5rem;
+}
+
+.key.nb {
+  border: none;
+}
+
+// .key.phone {
+//   background: #5cdb74;
+//   border: none;
+//   color: #fff;
+//   line-height: 60px;
+//   font-size: 40px;
+// }
