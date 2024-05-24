@@ -1,48 +1,80 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-dial2',
   templateUrl: './dial2.component.html',
-  styleUrls: ['./dial2.component.scss']
+  styleUrls: ['./dial2.component.scss'],
 })
 export class Dial2Component implements OnInit {
+  @Input() maxCount: number = 4;
+  constructor() {}
+  pass = '8547';
+  active: boolean = false;
+  spansArray: number[] = [];
+  count = 0;
+  outputDigits: string[] = [];
+  password: string = '';
 
-  constructor() { }
+  eyeIcon: string = 'fa-eye-slash';
 
-  ngOnInit(): void {
+  locked: boolean = false;
+  wrong: boolean = false;
+
+
+
+
+
+  showPass() {
+    this.active = !this.active;
+    this.active ? (this.eyeIcon = 'fa-eye') : (this.eyeIcon = 'fa-eye-slash');
   }
 
+  addDigit(digit: string) {
+    console.log(digit);
 
-  input: string = '';
-  correct: string = '1593';
-  dots: string[] = ['', '', '', ''];
-  numbers: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    if (this.count < this.maxCount) {
+      this.outputDigits.push(digit);
+      this.updatePassword();
+      this.count++;
 
-  onNumberClick(number: number) {
-    const dotIndex = this.input.length;
-    this.input += number;
-    this.dots[dotIndex] = 'active';
-
-    if (this.input.length >= 4) {
-      if (this.input !== this.correct) {
-        this.dots.fill('wrong');
-        document.body.classList.add('wrong');
+      if (this.password === this.pass) {
+        this.locked = true;
+        this.outputDigits=[];
+        this.count=1;
       } else {
-        this.dots.fill('correct');
-        document.body.classList.add('correct');
-      }
+        this.locked = false;
 
-      setTimeout(() => {
-        this.dots.fill('');
-        this.input = '';
-        document.body.classList.remove('wrong', 'correct');
-      }, 900);
-    } else {
-      setTimeout(() => {
-        this.dots[dotIndex] = '';
-      }, 1000);
+      }
     }
   }
 
+  removeLastDigit() {
+    if (this.password.length > 0) {
+      this.outputDigits.pop();
+      this.updatePassword();
 
+      const numberSpans = document.querySelectorAll('.number');
+
+      this.count--;
+    }
+
+    if (this.password === this.pass) {
+      this.locked = true;
+    } else {
+      this.locked = false;
+    }
+  }
+
+  updatePassword(): void {
+    this.password = this.outputDigits.join('');
+  }
+
+  clear() {
+    this.outputDigits = [];
+    this.count = 0;
+  }
+
+  ngOnInit(): void {
+    this.spansArray = Array(this.maxCount).fill(0);
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-dial-pad-lock',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dial-pad-lock.component.scss'],
 })
 export class DialPadLockComponent implements OnInit {
+  @Input() maxCount: number = 4;
   constructor() {}
 
   active: boolean = false;
@@ -13,7 +14,7 @@ export class DialPadLockComponent implements OnInit {
   count = 0;
   outputDigits: string[] = [];
   password: string = '';
-  maxCount: number = 4;
+
   eyeIcon: string = 'fa-eye-slash';
 
   showPass() {

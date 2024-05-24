@@ -63,6 +63,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DialPadLockComponent } from './Components/Dial-Pad/dial-pad-lock/dial-pad-lock.component';
 import { Thermostat4Component } from './Components/Thermostats/thermostat4/thermostat4.component';
 import { Dial2Component } from './Components/Dial-Pad/dial2/dial2.component';
+import { LockComponent } from './Components/Dial-Pad/dial-pad-lock/lock/lock.component';
 
 
 @NgModule({
@@ -122,6 +123,7 @@ import { Dial2Component } from './Components/Dial-Pad/dial2/dial2.component';
     DialPadLockComponent,
     Thermostat4Component,
     Dial2Component,
+    LockComponent,
  
 
 

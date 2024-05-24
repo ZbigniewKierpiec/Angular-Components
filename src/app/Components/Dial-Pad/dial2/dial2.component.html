@@ -1,9 +1,94 @@
-<div id="pin">
-  <div class="dots">
-    <div class="dot" *ngFor="let dot of dots" [ngClass]="dot"></div>
+<div class="pad">
+  <div class="display">
+    <!-- <label class="label" [class.active]="active" for="pass"
+      ><span *ngFor="let item of outputDigits">{{ item }}</span></label
+    >
+
+    <div [class.active]="!active" class="dot">
+      <span
+        [class.active]="outputDigits.length > i"
+        [classList]="outputDigits.length > i ? 'dot active' : 'dot'"
+        *ngFor="let item of spansArray; let i = index"
+        class="dot"
+      ></span>
+    </div>
+
+    <div  (click)="showPass()"     class="eye">
+      <i       class="fa-solid {{eyeIcon}}"></i>
+    </div>
+    <h3 class="text">enter the password</h3> -->
+    <div class="dots-cont">
+      <ng-container *ngIf="active">
+        <span class="numbers" *ngFor="let item of outputDigits">{{
+          item
+        }}</span>
+      </ng-container>
+
+      <ng-container *ngIf="!active">
+        <span
+          *ngFor="let item of spansArray; let i = index"
+          [ngClass]="{ 'active3': count === 4 && password !== pass }"
+          [ngClass]="{ active2: locked }"
+          [class.active]="outputDigits.length > i"
+          class="dots"
+        ></span>
+      </ng-container>
+    </div>
+
+    <div (click)="showPass()" class="eye">
+      <i class="fa-solid {{ eyeIcon }}"></i>
+    </div>
+
+    <div class="text">
+      <p>enter the password</p>
+    </div>
+
+    <div class="lock">
+      <span [class.unlocked]="locked" class="lock"></span>
+    </div>
   </div>
-  <p>Enter the password</p>
-  <div class="numbers">
-    <div class="number" *ngFor="let number of numbers" (click)="onNumberClick(number)">{{ number }}</div>
+  <div class="wrapper">
+    <div appRipple (click)="addDigit('1')" class="key" rel="1">
+      <span class="num">1</span> <span class="let clear">xxx</span>
+    </div>
+
+    <div appRipple (click)="addDigit('2')" class="key" rel="2">
+      <span class="num">2</span><span class="let">abc</span>
+    </div>
+    <div appRipple (click)="addDigit('3')" class="key" rel="3">
+      <span class="num">3</span><span class="let">def</span>
+    </div>
+
+    <div appRipple (click)="addDigit('4')" class="key" rel="4">
+      <span class="num">4</span><span class="let">ghi</span>
+    </div>
+    <div appRipple (click)="addDigit('5')" class="key" rel="5">
+      <span class="num">5</span><span class="let">jkl</span>
+    </div>
+    <div appRipple (click)="addDigit('6')" class="key" rel="6">
+      <span class="num">6</span><span class="let">mno</span>
+    </div>
+
+    <div appRipple (click)="addDigit('7')" class="key" rel="7">
+      <span class="num">7</span><span class="let">pqrs</span>
+    </div>
+    <div appRipple (click)="addDigit('8')" class="key" rel="8">
+      <span class="num">8</span><span class="let">tuv</span>
+    </div>
+    <div appRipple (click)="addDigit('9')" class="key" rel="9">
+      <span class="num">9</span><span class="let">wxyz</span>
+    </div>
+
+    <div appRipple (click)="clear()" class="key special">
+      <span>clear</span>
+    </div>
+    <div class="zero">
+      <div appRipple (click)="addDigit('0')" class="span zero">
+        <span class="num">0 </span>
+      </div>
+    </div>
+    <div appRipple (click)="removeLastDigit()" class="key special">
+      <i class="fa-solid fa-left-long"></i>
+    </div>
   </div>
 </div>
