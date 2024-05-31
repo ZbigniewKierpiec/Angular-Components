@@ -1,0 +1,16 @@
+.clock {
+  font-family: "Share Tech Mono", monospace;
+  color: #ffffff;
+  text-align: center;
+  background-color: black;
+  background-image: linear-gradient(to right, #171718, #121619, #0a1617, #061610, #0d1301);
+  padding: .5rem 2rem;
+  .time {
+    letter-spacing: 0.05em;
+    font-size: 1.7rem;
+  }
+  .date {
+    letter-spacing: 0.1em;
+    font-size: 1rem;
+  }
+}

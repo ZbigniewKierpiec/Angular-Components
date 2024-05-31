@@ -10,13 +10,13 @@ import {
 @Component({
   selector: 'app-svg-progress-bar',
   templateUrl: './svg-progress-bar.component.html',
-  styleUrls: ['./svg-progress-bar.component.scss'],
+  styleUrls: ['./svg-progress-bar.component.scss']
 })
 export class SvgProgressBarComponent {
   // ViewChild to reference the SVG element in the template
   @ViewChild('svgElement') svgElement?: ElementRef<SVGElement>;
   // Initial values for properties
-  value: number = 99;
+  @Input() value: number = 99;
   pathString: string = 'M5,50a45,45 0 1,0 90,0a45,45 0 1,0 -90,0';
   strokeDashoffset: string = '0';
   strokeDasharray: string = '0';

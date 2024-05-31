@@ -1,6 +1,6 @@
 .pad {
   width: 300px;
-  // height: 400px;
+
   background-color: #212121;
   border-radius: 0.7rem;
   transition: all 0.3s linear !important;
@@ -18,9 +18,10 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 0.7fr 0.3fr 0.7fr;
-  grid-template-rows: 60px 20px 60px 60px;
+  grid-template-rows: 50px 20px 50px 50px;
 
   align-content: center;
+
   .dots-cont {
     display: flex;
     justify-content: center;
@@ -47,7 +48,6 @@
       &.active3 {
         background-color: red;
         animation: shake 0.3s 1 ease-in-out;
-
       }
     }
   }
@@ -79,7 +79,7 @@
     .lock {
       --locked-color: white;
       --unlocked-color: white;
-      --wrongPass:red;
+      --wrongPass: red;
       width: 24px;
       height: 21px;
       border: 3px solid var(--locked-color);
@@ -138,7 +138,6 @@
     .unlocked:after {
       background: var(--unlocked-color);
     }
-   
   }
 }
 
@@ -160,8 +159,8 @@
   border-radius: 50%;
   color: #444;
 
-  width: 60px;
-  height: 60px;
+  width: 65px;
+  height: 65px;
   text-align: center;
   font-size: 30px;
   overflow: hidden;
@@ -267,9 +266,19 @@
 }
 
 @keyframes shake {
-  0% { transform: translateX(0); } /* Starting position */
-  25% { transform: translateX(-5px); } /* Move left */
-  50% { transform: translateX(5px); } /* Move right */
-  75% { transform: translateX(-5px); } /* Move left */
-  100% { transform: translateX(0); } /* Back to starting position */
+  0% {
+    transform: translateX(0);
+  } /* Starting position */
+  25% {
+    transform: translateX(-5px);
+  } /* Move left */
+  50% {
+    transform: translateX(5px);
+  } /* Move right */
+  75% {
+    transform: translateX(-5px);
+  } /* Move left */
+  100% {
+    transform: translateX(0);
+  } /* Back to starting position */
 }

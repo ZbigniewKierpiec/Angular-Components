@@ -1,22 +1,6 @@
 <div class="pad">
   <div class="display">
-    <!-- <label class="label" [class.active]="active" for="pass"
-      ><span *ngFor="let item of outputDigits">{{ item }}</span></label
-    >
 
-    <div [class.active]="!active" class="dot">
-      <span
-        [class.active]="outputDigits.length > i"
-        [classList]="outputDigits.length > i ? 'dot active' : 'dot'"
-        *ngFor="let item of spansArray; let i = index"
-        class="dot"
-      ></span>
-    </div>
-
-    <div  (click)="showPass()"     class="eye">
-      <i       class="fa-solid {{eyeIcon}}"></i>
-    </div>
-    <h3 class="text">enter the password</h3> -->
     <div class="dots-cont">
       <ng-container *ngIf="active">
         <span class="numbers" *ngFor="let item of outputDigits">{{
@@ -40,7 +24,7 @@
     </div>
 
     <div class="text">
-      <p>enter the password</p>
+      <p>{{ pass === password ? 'Password correct' : (password != pass && count == 4 ? 'password incorect' : 'enter the password')}}</p>
     </div>
 
     <div class="lock">

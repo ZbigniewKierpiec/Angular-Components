@@ -64,7 +64,8 @@ import { DialPadLockComponent } from './Components/Dial-Pad/dial-pad-lock/dial-p
 import { Thermostat4Component } from './Components/Thermostats/thermostat4/thermostat4.component';
 import { Dial2Component } from './Components/Dial-Pad/dial2/dial2.component';
 import { LockComponent } from './Components/Dial-Pad/dial-pad-lock/lock/lock.component';
-
+import { CascadaSelectComponent } from './Components/cascada-select/cascada-select/cascada-select.component';
+import { ClockComponent } from './Components/clock/clock.component';
 
 @NgModule({
   declarations: [
@@ -124,11 +125,8 @@ import { LockComponent } from './Components/Dial-Pad/dial-pad-lock/lock/lock.com
     Thermostat4Component,
     Dial2Component,
     LockComponent,
- 
-
-
-
-
+    CascadaSelectComponent,
+    ClockComponent
   ],
   providers: [ThemeService],
   bootstrap: [AppComponent],
@@ -138,8 +136,7 @@ import { LockComponent } from './Components/Dial-Pad/dial-pad-lock/lock/lock.com
     ReactiveFormsModule,
     BrowserAnimationsModule,
     HeatingThermostatComponent,
-    HttpClientModule
-
+    HttpClientModule,
   ],
 })
 export class AppModule {}

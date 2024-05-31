@@ -20,10 +20,6 @@ export class Dial2Component implements OnInit {
   locked: boolean = false;
   wrong: boolean = false;
 
-
-
-
-
   showPass() {
     this.active = !this.active;
     this.active ? (this.eyeIcon = 'fa-eye') : (this.eyeIcon = 'fa-eye-slash');
@@ -39,11 +35,10 @@ export class Dial2Component implements OnInit {
 
       if (this.password === this.pass) {
         this.locked = true;
-        this.outputDigits=[];
-        this.count=1;
+        this.outputDigits = [];
+        this.count = 0;
       } else {
         this.locked = false;
-
       }
     }
   }
@@ -60,8 +55,12 @@ export class Dial2Component implements OnInit {
 
     if (this.password === this.pass) {
       this.locked = true;
+      this.outputDigits = [];
+      this.count = 0;
     } else {
       this.locked = false;
+      // this.outputDigits=[];
+      // this.count=0;
     }
   }
 
@@ -71,7 +70,9 @@ export class Dial2Component implements OnInit {
 
   clear() {
     this.outputDigits = [];
+    this.password = '';
     this.count = 0;
+    this.locked = false;
   }
 
   ngOnInit(): void {

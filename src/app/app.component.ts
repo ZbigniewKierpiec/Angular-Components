@@ -24,8 +24,6 @@ export class AppComponent implements OnInit {
   title = 'app';
   darkMode = false;
   ButtonType = ButtonType;
- 
-
 
 
   constructor(private themeService: ThemeService) {}
