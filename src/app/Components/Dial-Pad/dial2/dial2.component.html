@@ -1,6 +1,5 @@
 <div class="pad">
   <div class="display">
-
     <div class="dots-cont">
       <ng-container *ngIf="active">
         <span class="numbers" *ngFor="let item of outputDigits">{{
@@ -11,7 +10,7 @@
       <ng-container *ngIf="!active">
         <span
           *ngFor="let item of spansArray; let i = index"
-          [ngClass]="{ 'active3': count === 4 && password !== pass }"
+          [ngClass]="{ active3: count === 4 && password !== pass }"
           [ngClass]="{ active2: locked }"
           [class.active]="outputDigits.length > i"
           class="dots"
@@ -24,7 +23,15 @@
     </div>
 
     <div class="text">
-      <p>{{ pass === password ? 'Password correct' : (password != pass && count == 4 ? 'password incorect' : 'enter the password')}}</p>
+      <p>
+        {{
+          pass === password
+            ? "Password correct"
+            : password != pass && count == 4
+            ? "password incorect"
+            : "enter the password"
+        }}
+      </p>
     </div>
 
     <div class="lock">

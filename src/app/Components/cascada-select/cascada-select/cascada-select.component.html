@@ -1,11 +1,11 @@
-<button (click)="addActive()" class="btn">
+<button   appRipple      (click)="addActive()" class="btn">
   {{ btn }} <span class="fa solid fa-angle-down"></span>
 </button>
 
-<div [class.active]="isActive" class="cont">
+<div       [class.active]="isActive" class="cont">
   <ul>
     <ng-container *ngFor="let item of countries">
-      <li [class.active]="isSame == item.id" (click)="selectState(item.id)">
+      <li  appRipple        [class.active]="isSame == item.id" (click)="selectState(item.id)">
         <img src="{{ item.flag }}" alt="{{ item.flag }}" /> {{ item.name }}
         <span class="fa-solid fa-angle-right"></span>
       </li>
@@ -14,7 +14,7 @@
 
   <ul [class.active]="selectedState.length > 0">
     <ng-container *ngFor="let item of selectedState">
-      <li
+      <li   appRipple
         [ngClass]="{
           'animate__animated animate__fadeInLeft': selectState.length > 0
         }"
@@ -29,7 +29,7 @@
 
   <ul [class.active]="selectedCities.length > 0">
     <ng-container *ngFor="let item of selectedCities">
-      <li class="las" (click)="selectName(item)">
+      <li      class="las" (click)="selectName(item)">
         {{ item.name }}
       </li>
     </ng-container>

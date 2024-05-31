@@ -1,4 +1,5 @@
 .btn {
+  position: relative;
   width: 15rem;
   outline: none;
   border: 1px solid #a0aec1;
@@ -10,6 +11,7 @@
   justify-content: space-between;
   align-items: center;
   background-color: transparent;
+  overflow: hidden;
 
   span {
     margin-left: 0.6rem;
@@ -59,6 +61,7 @@ ul {
 }
 
 li {
+  position: relative;
   padding: 0.4rem 0.7rem;
   text-transform: capitalize;
   cursor: pointer;
@@ -66,6 +69,7 @@ li {
   justify-content: space-between;
   align-items: center;
   border-radius: 0.2rem;
+  overflow: hidden;
   &.las{
     justify-content: center;
   }
@@ -79,5 +83,31 @@ li {
   }
   &:hover {
     background-color: #e7eaee;
+  }
+}
+
+/* Ripple effect for interactive elements */
+
+.ripple {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(135, 130, 130, 0.4);
+  background-color: rgba(5, 11, 86, 0.137);
+
+  transform: scale(0);
+  animation: ripple-effect 0.5s linear;
+}
+
+/* Keyframes for ripple animation */
+
+@keyframes ripple-effect {
+  to {
+    transform: scale(2);
+    opacity: 0;
   }
 }
